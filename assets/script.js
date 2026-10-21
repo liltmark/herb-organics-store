@@ -1,10 +1,8 @@
 /* Herb & Organics Co. — herborganic.store
-   Vanilla JS: mobile nav + WhatsApp order form (COD via WhatsApp)
+   Vanilla JS: mobile nav + on-site order form (FormSubmit AJAX, Cash on Delivery)
    + PWA service worker registration and Install App prompt. No trackers. */
 (function () {
   "use strict";
-
-  var WA_NUMBER = "923437124768";
 
   /* Base path: pages live at root or one level down in /products/ */
   var BASE = window.location.pathname.indexOf("/products/") !== -1 ? "../" : "";
@@ -68,33 +66,137 @@
   var yearEl = document.getElementById("year");
   if (yearEl) { yearEl.textContent = new Date().getFullYear(); }
 
-  /* Order form -> WhatsApp message (Cash on Delivery) */
+  /* ---------- Order form -> FormSubmit AJAX (Cash on Delivery) ----------
+     Orders are placed directly on this website; each order is emailed to the
+     store via FormSubmit. WhatsApp is for questions ONLY — never for ordering. */
+  var ORDER_ENDPOINT = "https://formsubmit.co/ajax/liltgag6@gmail.com";
+  var ORDER_SUBJECT = "New Order — Herb & Organics Store";
+  var CONTACT_NUMBER = "+92 343 7124768";
+  var SHAMPOO_PRICE = 999;
+
+  function escHtml(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
   var form = document.getElementById("order-form");
   if (form) {
+    var productSel = form.elements["product"];
+    var qtyInput = form.elements["quantity"];
+    var totalEl = document.getElementById("order-total");
+    var statusEl = document.getElementById("order-status");
+    var submitBtn = form.querySelector('button[type="submit"]');
+
+    function currentQty() {
+      var q = parseInt(qtyInput && qtyInput.value, 10);
+      if (isNaN(q) || q < 1) { q = 1; }
+      if (q > 10) { q = 10; }
+      return q;
+    }
+
+    /* Live total: shampoo shows Rs. 999 x qty. Beldi NEVER shows a price. */
+    function updateTotal() {
+      if (!totalEl || !productSel) { return; }
+      var v = productSel.value;
+      var qty = currentQty();
+      if (v.indexOf("Beldi") !== -1 && v.indexOf("Shampoo") === -1) {
+        totalEl.textContent = "Price hamari team confirmation call par bata degi.";
+      } else if (v.indexOf("Beldi") !== -1) {
+        totalEl.textContent = "NABAT Shampoo total: Rs. " + (SHAMPOO_PRICE * qty).toLocaleString("en-US") +
+          " — Beldi Black Soap ki price hamari team confirmation call par bata degi.";
+      } else {
+        totalEl.textContent = "Order total: Rs. " + (SHAMPOO_PRICE * qty).toLocaleString("en-US") + " (Cash on Delivery)";
+      }
+    }
+    if (productSel) { productSel.addEventListener("change", updateTotal); }
+    if (qtyInput) {
+      qtyInput.addEventListener("input", updateTotal);
+      qtyInput.addEventListener("change", updateTotal);
+    }
+    updateTotal();
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
 
       var name = form.elements["name"].value.trim();
-      var mobile = form.elements["mobile"].value.trim();
+      var mobileRaw = form.elements["mobile"].value.trim();
       var city = form.elements["city"].value.trim();
       var address = form.elements["address"].value.trim();
-      var product = form.elements["product"].value;
-      var qty = form.elements["quantity"].value;
+      var product = productSel ? productSel.value : "";
+      var qty = currentQty();
+      var notesEl = form.elements["notes"];
+      var notes = notesEl ? notesEl.value.trim() : "";
+      var honeyEl = form.elements["_honey"];
+      var honey = honeyEl ? honeyEl.value : "";
 
-      var lines = [
-        "Assalam-o-Alaikum! I want to place an order (Cash on Delivery).",
-        "",
-        "Product: " + product,
-        "Quantity: " + qty,
-        "",
-        "Name: " + name,
-        "Mobile: " + mobile,
-        "City: " + city,
-        "Complete Address: " + address
-      ];
+      function fail(msg) {
+        if (statusEl) { statusEl.textContent = msg; }
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Place Order — Cash on Delivery";
+        }
+      }
 
-      var url = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(lines.join("\n"));
-      window.open(url, "_blank", "noopener");
+      if (!name || !mobileRaw || !city || !address || !product) {
+        fail("Please fill in all required fields — name, mobile number, city, complete address and product.");
+        return;
+      }
+      var digits = mobileRaw.replace(/[\s\-()]/g, "");
+      if (!/^(\+92|92|0)3\d{9}$/.test(digits)) {
+        fail("Please enter a valid Pakistani mobile number, e.g. 03xx xxxxxxx.");
+        if (form.elements["mobile"].focus) { form.elements["mobile"].focus(); }
+        return;
+      }
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Placing your order…";
+      }
+      if (statusEl) { statusEl.textContent = "Submitting your order…"; }
+
+      var payload = {
+        "Name": name,
+        "Mobile": mobileRaw,
+        "City": city,
+        "Complete Address": address,
+        "Product": product,
+        "Quantity": String(qty),
+        "Notes": notes || "—",
+        "_subject": ORDER_SUBJECT,
+        "_template": "table",
+        "_captcha": "false",
+        "_honey": honey
+      };
+
+      fetch(ORDER_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify(payload)
+      })
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        var ok = data && (data.success === true || data.success === "true");
+        if (!ok) {
+          fail("Sorry, your order could not be submitted" +
+            (data && data.message ? " (" + data.message + ")" : "") +
+            ". Please try again, or contact us at " + CONTACT_NUMBER + ".");
+          return;
+        }
+        form.innerHTML =
+          '<div class="order-thanks">' +
+          "<h3>✅ Shukriya, " + escHtml(name.split(" ")[0]) + "! Your order has been received.</h3>" +
+          "<p><strong>Product:</strong> " + escHtml(product) +
+          "<br><strong>Quantity:</strong> " + qty +
+          "<br><strong>City:</strong> " + escHtml(city) + "</p>" +
+          "<p>Our team will call you on <strong>" + escHtml(mobileRaw) + "</strong> shortly to confirm your order. " +
+          "Payment is <strong>Cash on Delivery</strong> — you pay only when your parcel arrives at your door.</p>" +
+          '<p class="small">Koi sawal ho to WhatsApp par pooch sakte hain (sirf sawalon ke liye): ' + CONTACT_NUMBER + "</p>" +
+          "</div>";
+      })
+      .catch(function () {
+        fail("Sorry, your order could not be submitted — please check your internet connection and try again, or contact us at " + CONTACT_NUMBER + ".");
+      });
     });
   }
 })();
