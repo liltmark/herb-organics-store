@@ -3,14 +3,13 @@
    offline navigation fallback to the homepage. */
 "use strict";
 
-var CACHE_NAME = "herb-organics-v4";
+var CACHE_NAME = "herb-organics-v5";
 
 var CORE_ASSETS = [
   "/",
-  "/index.html",
-  "/about.html",
-  "/products/nabat-shampoo.html",
-  "/products/beldi-black-soap.html",
+  "/about",
+  "/products/nabat-shampoo",
+  "/products/beldi-black-soap",
   "/assets/style.css",
   "/assets/script.js",
   "/assets/chatbot.js",
@@ -72,7 +71,7 @@ self.addEventListener("fetch", function (event) {
       fetch(req).catch(function () {
         return caches.match(req).then(function (cached) {
           if (cached) { return cached; }
-          if (req.mode === "navigate") { return caches.match("/index.html"); }
+          if (req.mode === "navigate") { return caches.match("/"); }
         });
       })
     );
