@@ -80,3 +80,7 @@ These paths are already referenced by the Open Graph/Twitter tags and the Produc
 - Homepage #reviews: 3 embedded Instagram review reels (official IG embed, permalinks DcoqWIUtL4T, Daa1Ur1MDrf, DaLTmuLMPqa) with the reviewers' own caption quotes + handles, plus 3 text quote cards (@whimsy.byfatima post DZ-BvItsHsd; two quotes from the brand's Reviews highlight). Creators' permission was confirmed by the owner as already obtained. No star ratings were added (no verified numeric ratings exist).
 - Shampoo page carries a compact "What Customers Say" band linking to the homepage videos.
 - Real product photo live: images/nabat-shampoo.jpg (brand's own Instagram launch post image).
+
+## Business email (decided 2026-10-21)
+- info@herborganic.store is displayed on the store (footer, all pages) and in the Organization schema. Mail forwarding to the family's Gmail is to be configured at Namecheap (free email forwarding) in the same session as the go-live DNS changes — no purchased mailbox. Destination Gmail to be confirmed by the owner.
+- Real Beldi Black Soap photo live: images/beldi-black-soap.jpg (brand's Instagram carousel slide 1).
