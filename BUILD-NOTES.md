@@ -75,3 +75,8 @@ These paths are already referenced by the Open Graph/Twitter tags and the Produc
 - All JSON-LD blocks parse as valid JSON; `manifest.webmanifest` parses as valid JSON; `sitemap.xml` parses as valid XML.
 - No placeholder filler text anywhere on the site.
 - Beldi pages contain no price; shampoo price (Rs. 999) appears only where intended.
+
+## Reviews section (added 2026-10-21)
+- Homepage #reviews: 3 embedded Instagram review reels (official IG embed, permalinks DcoqWIUtL4T, Daa1Ur1MDrf, DaLTmuLMPqa) with the reviewers' own caption quotes + handles, plus 3 text quote cards (@whimsy.byfatima post DZ-BvItsHsd; two quotes from the brand's Reviews highlight). Creators' permission was confirmed by the owner as already obtained. No star ratings were added (no verified numeric ratings exist).
+- Shampoo page carries a compact "What Customers Say" band linking to the homepage videos.
+- Real product photo live: images/nabat-shampoo.jpg (brand's own Instagram launch post image).
