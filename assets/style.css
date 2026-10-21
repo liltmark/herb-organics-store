@@ -336,3 +336,7 @@ li { margin-bottom: .35em; }
   .site-header { position: relative; }
   .section { padding: 46px 0; }
 }
+
+/* Real product photo visuals */
+.visual--photo { padding: 0; overflow: hidden; }
+.visual--photo img { width: 100%; height: auto; display: block; }
