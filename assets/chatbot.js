@@ -226,8 +226,8 @@
   function orderTarget() {
     if (document.getElementById("order-form")) { return "#order"; }
     var p = window.location.pathname;
-    if (p.indexOf("/products/") !== -1 || p.indexOf("/blog/") !== -1) { return "../index.html#order"; }
-    return "index.html#order";
+    if (p.indexOf("/products/") !== -1 || p.indexOf("/blog/") !== -1) { return "../#order"; }
+    return "./#order";
   }
 
   function addMsg(text, who, intentId) {
