@@ -84,3 +84,11 @@ These paths are already referenced by the Open Graph/Twitter tags and the Produc
 ## Business email (decided 2026-10-21)
 - info@herborganic.store is displayed on the store (footer, all pages) and in the Organization schema. Mail forwarding to the family's Gmail is to be configured at Namecheap (free email forwarding) in the same session as the go-live DNS changes — no purchased mailbox. Destination Gmail to be confirmed by the owner.
 - Real Beldi Black Soap photo live: images/beldi-black-soap.jpg (brand's Instagram carousel slide 1).
+
+## Blog (added 2026-10-21)
+- `blog/index.html` — blog home: 3 article cards (date 21 October 2026, excerpts, Read more), BreadcrumbList + ItemList schema, canonical `https://herborganic.store/blog/`.
+- `blog/sulphate-free-shampoo-pakistan.html` — "Sulphate-Free Shampoo in Pakistan: Why Gentle Cleansing Matters for Hair Fall, Frizz & Dryness" — features NABAT (Rs. 999) with product link + WhatsApp CTA.
+- `blog/beldi-black-soap-benefits.html` — "Moroccan Beldi Black Soap: Benefits, Hammam Ritual & How to Use It" — step-by-step kessa ritual, 1–2×/week; features Beldi with WhatsApp price-enquiry CTA (**no price**, per owner rule).
+- `blog/amla-reetha-shikakai-hair.html` — "Amla, Reetha & Shikakai: The Herbal Trio for Naturally Healthy Hair" — features NABAT with product link + WhatsApp CTA.
+- Every article: unique keyword title + meta description, canonical, OG/Twitter tags, Article JSON-LD (author/publisher = Herb & Organics Co., datePublished 2026-10-21), BreadcrumbList, one `<h1>`, and a "Keep Reading" box cross-linking the other articles + both product pages. Claims are cosmetic-only ("helps", "supports", "known for") using verified product facts — no medical claims, no invented statistics.
+- Site wiring: "Blog" nav link added to index, about and both product pages (footer Explore also links Blog on blog pages); all 4 blog URLs added to `sitemap.xml`; blog styles (`.blog-card`, `.blog-meta`, `.article-body`, `.cta-box`, `.related-box`) appended to `assets/style.css` in the site's existing design system.
