@@ -3,7 +3,7 @@
    offline navigation fallback to the homepage. */
 "use strict";
 
-var CACHE_NAME = "herb-organics-v1";
+var CACHE_NAME = "herb-organics-v2";
 
 var CORE_ASSETS = [
   "/",
@@ -13,6 +13,7 @@ var CORE_ASSETS = [
   "/products/beldi-black-soap.html",
   "/assets/style.css",
   "/assets/script.js",
+  "/assets/chatbot.js",
   "/manifest.webmanifest",
   "/icons/icon-192.png",
   "/icons/icon-512.png",
