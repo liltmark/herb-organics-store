@@ -358,3 +358,43 @@ li { margin-bottom: .35em; }
 .quote-card .who { margin-top: auto; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 .quote-card a, .video-meta a { color: var(--green-900); font-weight: 600; }
 .reviews-cta { text-align: center; margin-top: 34px; }
+
+/* ---------- Blog ---------- */
+.blog-meta {
+  display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center;
+  font-size: .88rem; color: var(--muted); margin-bottom: 18px;
+}
+.blog-meta .blog-cat {
+  background: var(--green-100); color: var(--green-800); font-weight: 700;
+  font-size: .76rem; letter-spacing: .06em; text-transform: uppercase;
+  padding: 3px 11px; border-radius: 999px;
+}
+.blog-card .card-body { gap: 10px; }
+.blog-card h3 { font-size: 1.3rem; line-height: 1.35; }
+.blog-card h3 a { color: var(--green-900); text-decoration: none; }
+.blog-card h3 a:hover { color: var(--gold); text-decoration: underline; }
+.blog-card .blog-date { font-size: .85rem; color: var(--gold); font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+.blog-card .read-more { font-weight: 700; color: var(--green-800); text-decoration: none; }
+.blog-card .read-more:hover { color: var(--gold); text-decoration: underline; }
+.article-wrap { max-width: 780px; margin: 0 auto; }
+.article-body h2 { margin-top: 1.5em; }
+.article-body h3 { margin-top: 1.3em; }
+.article-body p, .article-body li { font-size: 1.04rem; }
+.article-body ul, .article-body ol { margin-bottom: 1.2em; }
+.article-body li { margin-bottom: .5em; }
+.cta-box {
+  background: var(--green-50); border: 1px solid var(--green-100); border-left: 5px solid var(--gold);
+  border-radius: var(--radius); padding: 26px; margin: 34px 0;
+}
+.cta-box h3 { margin-bottom: .35em; }
+.cta-box p { color: var(--muted); margin-bottom: 16px; }
+.cta-box .btn { margin-right: 10px; margin-bottom: 8px; }
+.related-box {
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 24px 26px; margin: 34px 0 6px;
+}
+.related-box h3 { border-bottom: 2px solid var(--green-100); padding-bottom: 10px; }
+.related-box ul { list-style: none; padding: 0; margin: 0; }
+.related-box li { margin-bottom: 10px; }
+.related-box a { font-weight: 600; text-decoration: none; }
+.related-box a:hover { text-decoration: underline; }
