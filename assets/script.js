@@ -73,6 +73,7 @@
   var ORDER_SUBJECT = "New Order — Herb & Organics Store";
   var CONTACT_NUMBER = "+92 343 7124768";
   var SHAMPOO_PRICE = 999;
+  var BELDI_PRICE = 500;
 
   function escHtml(s) {
     return String(s).replace(/[&<>"']/g, function (c) {
@@ -95,19 +96,15 @@
       return q;
     }
 
-    /* Live total: shampoo shows Rs. 999 x qty. Beldi NEVER shows a price. */
+    /* Live total: shampoo Rs. 999, Beldi Rs. 500, both together Rs. 1,499 — each x qty. */
     function updateTotal() {
       if (!totalEl || !productSel) { return; }
       var v = productSel.value;
       var qty = currentQty();
-      if (v.indexOf("Beldi") !== -1 && v.indexOf("Shampoo") === -1) {
-        totalEl.textContent = "Price hamari team confirmation call par bata degi.";
-      } else if (v.indexOf("Beldi") !== -1) {
-        totalEl.textContent = "NABAT Shampoo total: Rs. " + (SHAMPOO_PRICE * qty).toLocaleString("en-US") +
-          " — Beldi Black Soap ki price hamari team confirmation call par bata degi.";
-      } else {
-        totalEl.textContent = "Order total: Rs. " + (SHAMPOO_PRICE * qty).toLocaleString("en-US") + " (Cash on Delivery)";
-      }
+      var unit = 0;
+      if (v.indexOf("Shampoo") !== -1) { unit += SHAMPOO_PRICE; }
+      if (v.indexOf("Beldi") !== -1) { unit += BELDI_PRICE; }
+      totalEl.textContent = "Order total: Rs. " + (unit * qty).toLocaleString("en-US") + " (Cash on Delivery)";
     }
     if (productSel) { productSel.addEventListener("change", updateTotal); }
     if (qtyInput) {
