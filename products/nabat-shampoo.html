@@ -120,8 +120,15 @@
     </nav>
 
     <div class="product-hero">
-      <div class="visual visual--photo">
-        <img src="../images/nabat-shampoo.jpg" alt="NABAT Herbal &amp; Organic Shampoo 300 ml bottle — sulphate &amp; paraben free herbal shampoo with amla, hibiscus and shikakai" width="1440" height="1440">
+      <div>
+        <div class="visual visual--photo">
+          <img id="gallery-main" src="../images/nabat-shampoo.jpg" alt="NABAT Herbal &amp; Organic Shampoo 300 ml bottle — sulphate &amp; paraben free herbal shampoo with amla, hibiscus and shikakai" width="1440" height="1440">
+        </div>
+        <div class="g-thumbs" role="group" aria-label="More product photos">
+          <button type="button" class="g-thumb is-active" data-full="../images/nabat-shampoo.jpg" data-alt="NABAT Herbal &amp; Organic Shampoo 300 ml bottle — sulphate &amp; paraben free herbal shampoo with amla, hibiscus and shikakai"><img src="../images/nabat-shampoo.jpg" alt="NABAT shampoo photo 1"></button>
+          <button type="button" class="g-thumb" data-full="../images/nabat-shampoo-2.jpg" data-alt="NABAT Herbal &amp; Organic Shampoo bottle in hand — for hair fall, volume and healthy shine"><img src="../images/nabat-shampoo-2.jpg" alt="NABAT shampoo photo 2"></button>
+          <button type="button" class="g-thumb" data-full="../images/nabat-shampoo-3.jpg" data-alt="NABAT Herbal &amp; Organic Shampoo 300 ml — studio product photo"><img src="../images/nabat-shampoo-3.jpg" alt="NABAT shampoo photo 3"></button>
+        </div>
       </div>
 
       <div class="product-info">
@@ -353,6 +360,17 @@
 
 <a class="wa-float" href="https://wa.me/923437124768?text=Assalam-o-Alaikum!%20I%20have%20a%20question%20about%20your%20products." target="_blank" rel="noopener" aria-label="Chat with Herb and Organics Co. on WhatsApp">💬<span class="sr">Chat on WhatsApp</span></a>
 
+<script>
+document.querySelectorAll(".g-thumb").forEach(function (b) {
+  b.addEventListener("click", function () {
+    var m = document.getElementById("gallery-main");
+    m.src = b.getAttribute("data-full");
+    m.alt = b.getAttribute("data-alt");
+    document.querySelectorAll(".g-thumb").forEach(function (x) { x.classList.remove("is-active"); });
+    b.classList.add("is-active");
+  });
+});
+</script>
 <script src="../assets/script.js"></script>
 <script src="../assets/chatbot.js"></script>
 </body>
