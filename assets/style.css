@@ -340,3 +340,21 @@ li { margin-bottom: .35em; }
 /* Real product photo visuals */
 .visual--photo { padding: 0; overflow: hidden; }
 .visual--photo img { width: 100%; height: auto; display: block; }
+
+/* Reviews section */
+.video-grid { display: grid; gap: 26px; }
+@media (min-width: 860px) { .video-grid { grid-template-columns: repeat(3, 1fr); } }
+.video-card { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; display: flex; flex-direction: column; }
+.video-card .ig-wrap { padding: 12px 12px 0; }
+.video-card blockquote.instagram-media { margin: 0 auto !important; width: 100% !important; min-width: 0 !important; }
+.video-meta { padding: 16px 20px 20px; display: flex; flex-direction: column; gap: 6px; }
+.video-meta .q { font-style: italic; color: var(--ink); margin: 0; }
+.video-meta .who { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.video-meta .handle { font-weight: 700; color: var(--green-900); }
+.time-chip { background: var(--gold); color: #fff; font-size: .74rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 3px 10px; border-radius: 999px; }
+.quote-card { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); padding: 26px; display: flex; flex-direction: column; gap: 10px; }
+.quote-card .mark { font-size: 2.2rem; line-height: 1; color: var(--gold); font-family: Georgia, serif; }
+.quote-card p { margin: 0; font-size: 1.02rem; }
+.quote-card .who { margin-top: auto; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.quote-card a, .video-meta a { color: var(--green-900); font-weight: 600; }
+.reviews-cta { text-align: center; margin-top: 34px; }
