@@ -66,11 +66,14 @@
   var yearEl = document.getElementById("year");
   if (yearEl) { yearEl.textContent = new Date().getFullYear(); }
 
-  /* ---------- Order form -> FormSubmit AJAX (Cash on Delivery) ----------
-     Orders are placed directly on this website; each order is emailed to the
-     store via FormSubmit. WhatsApp is for questions ONLY — never for ordering. */
-  var ORDER_ENDPOINT = "https://formsubmit.co/ajax/liltgag6@gmail.com";
-  var ORDER_SUBJECT = "New Order — Herb & Organics Store";
+  /* ---------- Order form -> Google Sheet Panel (Apps Script, Cash on Delivery) ----------
+     Orders are placed directly on this website; each order lands in the store's
+     Google Sheet (Orders tab) and a notification email goes to info@herborganic.store.
+     Live prices are fetched from the same panel; the prices baked in below are the
+     fallback if the panel cannot be reached. FormSubmit retired 2026-10-22.
+     WhatsApp is for questions ONLY — never for ordering. */
+  var APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw_LWxw9jUCBUjsZc2s1oPYfTcB7t9IFccqUES1uNijiHZXmWUu6DyqurfNAWCvPcqelQ/exec";
+  var ORDER_SECRET = "herb-orders-7f3k9";
   var CONTACT_NUMBER = "+92 343 7124768";
   var SHAMPOO_PRICE = 999;
   var BELDI_PRICE = 500;
@@ -111,6 +114,63 @@
       qtyInput.addEventListener("input", updateTotal);
       qtyInput.addEventListener("change", updateTotal);
     }
+
+    /* ---------- Live prices from the Sheet Panel (graceful fallback) ---------- */
+    function fmtRs(n) { return "Rs. " + Number(n).toLocaleString("en-US"); }
+
+    function applyLivePrices(list) {
+      if (!list || !list.length) { return; }
+      var byId = {};
+      list.forEach(function (p) { byId[p.id] = p; });
+
+      if (byId.shampoo && byId.shampoo.price > 0) { SHAMPOO_PRICE = byId.shampoo.price; }
+      if (byId.beldi && byId.beldi.price > 0) { BELDI_PRICE = byId.beldi.price; }
+
+      document.querySelectorAll("[data-price-for]").forEach(function (el) {
+        var p = byId[el.getAttribute("data-price-for")];
+        if (p && p.price > 0) {
+          var amount = el.querySelector(".price-amount");
+          if (amount) { amount.textContent = fmtRs(p.price); }
+        }
+      });
+
+      if (productSel) {
+        Array.prototype.forEach.call(productSel.options, function (opt) {
+          var v = opt.value;
+          var unit = 0;
+          if (v.indexOf("Shampoo") !== -1 && byId.shampoo) { unit += byId.shampoo.price; }
+          if (v.indexOf("Beldi") !== -1 && byId.beldi) { unit += byId.beldi.price; }
+          if (unit > 0) {
+            opt.textContent = v.replace(/\s*[—-]\s*Rs\.?\s*[\d,]+.*$/, "") + " — " + fmtRs(unit);
+          }
+        });
+
+        Array.prototype.slice.call(productSel.options).forEach(function (opt) {
+          var v = opt.value.toLowerCase();
+          var p = null;
+          if (v.indexOf("shampoo") !== -1) { p = byId.shampoo; }
+          if (v.indexOf("beldi") !== -1) { p = byId.beldi; }
+          if (p && !p.active) { opt.remove(); }
+        });
+      }
+
+      updateTotal();
+    }
+
+    function fetchLivePrices() {
+      if (!APPS_SCRIPT_URL || APPS_SCRIPT_URL.indexOf("http") !== 0) { return; }
+      var ctrl = ("AbortController" in window) ? new AbortController() : null;
+      var timer = ctrl ? setTimeout(function () { ctrl.abort(); }, 4000) : null;
+      fetch(APPS_SCRIPT_URL + "?action=products", ctrl ? { signal: ctrl.signal } : {})
+        .then(function (res) { return res.json(); })
+        .then(function (data) {
+          if (timer) { clearTimeout(timer); }
+          if (data && data.ok && data.products) { applyLivePrices(data.products); }
+        })
+        .catch(function () { if (timer) { clearTimeout(timer); } /* fallback: baked-in prices */ });
+    }
+    fetchLivePrices();
+
     updateTotal();
 
     form.addEventListener("submit", function (e) {
@@ -152,31 +212,36 @@
       }
       if (statusEl) { statusEl.textContent = "Submitting your order…"; }
 
+      var unit = 0;
+      if (product.indexOf("Shampoo") !== -1) { unit += SHAMPOO_PRICE; }
+      if (product.indexOf("Beldi") !== -1) { unit += BELDI_PRICE; }
+
       var payload = {
-        "Name": name,
-        "Mobile": mobileRaw,
-        "City": city,
-        "Complete Address": address,
-        "Product": product,
-        "Quantity": String(qty),
-        "Notes": notes || "—",
-        "_subject": ORDER_SUBJECT,
-        "_template": "table",
-        "_captcha": "false",
-        "_honey": honey
+        "secret": ORDER_SECRET,
+        "name": name,
+        "mobile": mobileRaw,
+        "city": city,
+        "address": address,
+        "product": product,
+        "quantity": qty,
+        "unitPrice": unit,
+        "total": unit * qty,
+        "notes": notes,
+        "timestamp": new Date().toISOString()
       };
 
-      fetch(ORDER_ENDPOINT, {
+      fetch(APPS_SCRIPT_URL, {
         method: "POST",
-        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        /* text/plain on purpose — no CORS preflight, Apps Script doPost runs directly. */
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
         body: JSON.stringify(payload)
       })
       .then(function (res) { return res.json(); })
       .then(function (data) {
-        var ok = data && (data.success === true || data.success === "true");
+        var ok = data && data.ok === true;
         if (!ok) {
           fail("Sorry, your order could not be submitted" +
-            (data && data.message ? " (" + data.message + ")" : "") +
+            (data && data.error ? " (" + data.error + ")" : "") +
             ". Please try again, or contact us at " + CONTACT_NUMBER + ".");
           return;
         }
