@@ -73,7 +73,7 @@
      fallback if the panel cannot be reached. FormSubmit retired 2026-10-22.
      WhatsApp is for questions ONLY — never for ordering. */
   var APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw_LWxw9jUCBUjsZc2s1oPYfTcB7t9IFccqUES1uNijiHZXmWUu6DyqurfNAWCvPcqelQ/exec";
-  var ORDER_SECRET = "herb-orders-7f3k9";
+  var ORDER_SECRET = "CHANGE_ME_hob_secret_2026";
   var CONTACT_NUMBER = "+92 343 7124768";
   var SHAMPOO_PRICE = 999;
   var BELDI_PRICE = 500;
