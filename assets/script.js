@@ -77,6 +77,12 @@
   var CONTACT_NUMBER = "+92 343 7124768";
   var SHAMPOO_PRICE = 999;
   var BELDI_PRICE = 500;
+  var BELDI_BIG_PRICE = 700;
+
+  /* Beldi size: Large Packet = BELDI_BIG_PRICE, anything else Beldi = Small Packet price. */
+  function beldiUnitFor(v) {
+    return v.indexOf("Large Packet") !== -1 ? BELDI_BIG_PRICE : BELDI_PRICE;
+  }
 
   function escHtml(s) {
     return String(s).replace(/[&<>"']/g, function (c) {
@@ -99,14 +105,14 @@
       return q;
     }
 
-    /* Live total: shampoo Rs. 999, Beldi Rs. 500, both together Rs. 1,499 — each x qty. */
+    /* Live total: shampoo Rs. 999, Beldi Small Rs. 500 / Large Rs. 700, shampoo+small Rs. 1,499 — each x qty. */
     function updateTotal() {
       if (!totalEl || !productSel) { return; }
       var v = productSel.value;
       var qty = currentQty();
       var unit = 0;
       if (v.indexOf("Shampoo") !== -1) { unit += SHAMPOO_PRICE; }
-      if (v.indexOf("Beldi") !== -1) { unit += BELDI_PRICE; }
+      if (v.indexOf("Beldi") !== -1) { unit += beldiUnitFor(v); }
       totalEl.textContent = "Order total: Rs. " + (unit * qty).toLocaleString("en-US") + " (Cash on Delivery)";
     }
     if (productSel) { productSel.addEventListener("change", updateTotal); }
@@ -125,8 +131,14 @@
 
       if (byId.shampoo && byId.shampoo.price > 0) { SHAMPOO_PRICE = byId.shampoo.price; }
       if (byId.beldi && byId.beldi.price > 0) { BELDI_PRICE = byId.beldi.price; }
+      if (byId.beldi_big && byId.beldi_big.price > 0) { BELDI_BIG_PRICE = byId.beldi_big.price; }
 
       document.querySelectorAll("[data-price-for]").forEach(function (el) {
+        if (el.getAttribute("data-price-for") === "beldi-variants") {
+          var amt = el.querySelector(".price-amount");
+          if (amt) { amt.textContent = fmtRs(BELDI_PRICE) + " \u2013 " + fmtRs(BELDI_BIG_PRICE); }
+          return;
+        }
         var p = byId[el.getAttribute("data-price-for")];
         if (p && p.price > 0) {
           var amount = el.querySelector(".price-amount");
@@ -139,7 +151,7 @@
           var v = opt.value;
           var unit = 0;
           if (v.indexOf("Shampoo") !== -1 && byId.shampoo) { unit += byId.shampoo.price; }
-          if (v.indexOf("Beldi") !== -1 && byId.beldi) { unit += byId.beldi.price; }
+          if (v.indexOf("Beldi") !== -1 && byId.beldi) { unit += beldiUnitFor(v); }
           if (unit > 0) {
             opt.textContent = v.replace(/\s*[—-]\s*Rs\.?\s*[\d,]+.*$/, "") + " — " + fmtRs(unit);
           }
@@ -214,7 +226,7 @@
 
       var unit = 0;
       if (product.indexOf("Shampoo") !== -1) { unit += SHAMPOO_PRICE; }
-      if (product.indexOf("Beldi") !== -1) { unit += BELDI_PRICE; }
+      if (product.indexOf("Beldi") !== -1) { unit += beldiUnitFor(product); }
 
       var payload = {
         "secret": ORDER_SECRET,
