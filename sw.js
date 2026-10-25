@@ -3,13 +3,14 @@
    offline navigation fallback to the homepage. */
 "use strict";
 
-var CACHE_NAME = "herb-organics-v9";
+var CACHE_NAME = "herb-organics-v10";
 
 var CORE_ASSETS = [
   "/",
   "/about",
   "/products/nabat-shampoo",
   "/products/beldi-black-soap",
+  "/products/nabat-oil",
   "/assets/style.css",
   "/assets/script.js",
   "/assets/chatbot.js",
