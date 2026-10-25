@@ -114,3 +114,10 @@ These paths are already referenced by the Open Graph/Twitter tags and the Produc
 - Mapping: / (home), /about, /products/nabat-shampoo, /products/beldi-black-soap, /blog/, /blog/sulphate-free-shampoo-pakistan, /blog/beldi-black-soap-benefits, /blog/amla-reetha-shikakai-hair.
 - NOT touched: asset filenames (css/js/images/icons/manifest), external URLs, page content, prices, file names on disk, CNAME.
 - Verified locally: zero ".html" page references remain; all 196 old-vs-new href pairs resolve to the same on-disk page; all JSON-LD blocks still parse.
+
+## 2026-10-25 — Beldi Black Soap size variants (owner's order)
+- Beldi Black Soap now has TWO sizes everywhere on the site: **Small Packet Rs. 500** and **Large Packet Rs. 700**.
+- Order forms (home + both product pages) offer Small and Large as separate options; the bundle option is Shampoo + Beldi **Small** Packet = Rs. 1,499.
+- `assets/script.js`: `BELDI_BIG_PRICE = 700` + `beldiUnitFor()` (Large Packet → 700, else 500) used in total calc, live-price option rewrite and submit. Live panel prices still win: Sheet `beldi` row = Small Packet price; if a `beldi_big` row is ever added to the Products tab it will override the Large price automatically.
+- Homepage card + Beldi page show "Rs. 500 – Rs. 700" via `data-price-for="beldi-variants"` (JS writes the live range). Beldi page schema is now an AggregateOffer (low 500 / high 700). FAQ answers + chatbot (EN/Roman Urdu/Urdu) updated. Service worker bumped to herb-organics-v9.
+- Verified in repo commits 2026-10-25 (6 commits, 13:43:51–13:44:02 UTC). NOTE: GitHub Pages builds for those rapid successive commits errored/stuck ("building" on HEAD for 6+ min) — this notes commit also serves as a fresh build trigger.
