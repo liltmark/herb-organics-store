@@ -76,8 +76,8 @@
   var ORDER_SECRET = "CHANGE_ME_hob_secret_2026";
   var CONTACT_NUMBER = "+92 343 7124768";
   var SHAMPOO_PRICE = 999;
-  var BELDI_PRICE = 500;
-  var BELDI_BIG_PRICE = 700;
+  var BELDI_PRICE = 300;
+  var BELDI_BIG_PRICE = 500;
   var OIL_PRICE = 700;
   var OIL_BIG_PRICE = 1000;
 
@@ -112,7 +112,7 @@
       return q;
     }
 
-    /* Live total: shampoo Rs. 999, Beldi Small Rs. 500 / Large Rs. 700, oil Small Rs. 700 / Big Rs. 1,000 — each x qty. */
+    /* Live total: shampoo Rs. 999, Beldi Small Rs. 300 / Large Rs. 500, oil Small Rs. 700 / Big Rs. 1,000 — each x qty. */
     function updateTotal() {
       if (!totalEl || !productSel) { return; }
       var v = productSel.value;
