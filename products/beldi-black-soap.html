@@ -13,11 +13,11 @@
 <meta property="og:title" content="Traditional Moroccan Beldi Black Soap in Pakistan">
 <meta property="og:description" content="Olive-based rich paste soap for deep cleansing, gentle exfoliation and glowing skin. Rs. 300–500 — COD across Pakistan — order through the order form on this website.">
 <meta property="og:url" content="https://herborganic.store/products/beldi-black-soap">
-<meta property="og:image" content="https://herborganic.store/images/beldi-black-soap.jpg">
+<meta property="og:image" content="https://herborganic.store/images/beldi-soap-1.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Traditional Moroccan Beldi Black Soap in Pakistan">
 <meta name="twitter:description" content="The ancient secret to naturally soft, clean and glowing skin. Deep cleanses, exfoliates, unclogs pores. Rs. 300–500. Order through the order form on this website.">
-<meta name="twitter:image" content="https://herborganic.store/images/beldi-black-soap.jpg">
+<meta name="twitter:image" content="https://herborganic.store/images/beldi-soap-1.jpg">
 <link rel="manifest" href="../manifest.webmanifest">
 <link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
 <meta name="mobile-web-app-capable" content="yes">
@@ -31,7 +31,7 @@
   "@type": "Product",
   "name": "Beldi Black Soap — Traditional Moroccan Beldi Black Soap",
   "description": "Traditional Moroccan Beldi Black Soap: a rich, olive-based paste soap that deep cleanses, gently exfoliates dead skin cells, unclogs pores and nourishes skin naturally with olive goodness and natural minerals. Ideal for body, face (with caution), hands and feet. Perfect for the hammam ritual.",
-  "image": "https://herborganic.store/images/beldi-black-soap.jpg",
+  "image": "https://herborganic.store/images/beldi-soap-1.jpg",
   "brand": { "@type": "Brand", "name": "Herb & Organics Co." },
   "url": "https://herborganic.store/products/beldi-black-soap",
   "offers": {
@@ -131,8 +131,19 @@
     </nav>
 
     <div class="product-hero">
-      <div class="visual visual--photo">
-        <img src="../images/beldi-black-soap.jpg" alt="Traditional Moroccan Beldi Black Soap — olive paste soap in a bowl, deep cleansing and gentle exfoliation" width="1080" height="1080">
+      <div>
+        <div class="visual visual--photo">
+          <img id="gallery-main" src="../images/beldi-soap-1.jpg" alt="Beldi Black Soap by Herb &amp; Organics Co. — handmade soap bars, cream oatmeal and orange, wrapped with round cream labels on a dark botanical stone surface" width="992" height="2096">
+        </div>
+        <div class="g-thumbs" role="group" aria-label="More product photos">
+          <button type="button" class="g-thumb is-active" data-full="../images/beldi-soap-1.jpg" data-alt="Beldi Black Soap handmade bars — cream oatmeal and orange bars with cream labels on a dark botanical stone surface"><img src="../images/beldi-soap-1.jpg" alt="Beldi Black Soap photo"></button>
+          <button type="button" class="g-thumb" data-full="../images/beldi-soap-2.jpg" data-alt="Beldi Black Soap bars showing the back label — ingredients: oatmeal, goat milk, essential oils (lavender, lemon), clay, vitamin E"><img src="../images/beldi-soap-2.jpg" alt="Beldi Black Soap photo"></button>
+          <button type="button" class="g-thumb" data-full="../images/beldi-soap-3.jpg" data-alt="Beldi Black Soap cream oatmeal bar with lavender sprigs and oat grains"><img src="../images/beldi-soap-3.jpg" alt="Beldi Black Soap photo"></button>
+          <button type="button" class="g-thumb" data-full="../images/beldi-soap-4.jpg" data-alt="Beldi Black Soap orange bar with a fresh orange slice and berries"><img src="../images/beldi-soap-4.jpg" alt="Beldi Black Soap photo"></button>
+          <button type="button" class="g-thumb" data-full="../images/beldi-soap-5.jpg" data-alt="Beldi Black Soap — the real handmade bars, exactly as you receive them"><img src="../images/beldi-soap-5.jpg" alt="Beldi Black Soap photo"></button>
+          <button type="button" class="g-thumb" data-full="../images/beldi-soap-6.jpg" data-alt="Beldi Black Soap — real bars showing the ingredients and benefits label"><img src="../images/beldi-soap-6.jpg" alt="Beldi Black Soap photo"></button>
+          <button type="button" class="g-thumb" data-full="../images/beldi-black-soap.jpg" data-alt="Traditional Beldi black soap — rich olive paste texture"><img src="../images/beldi-black-soap.jpg" alt="Beldi Black Soap photo"></button>
+        </div>
       </div>
 
       <div class="product-info">
@@ -321,6 +332,17 @@
 
 <a class="wa-float" href="https://wa.me/923437124768?text=Assalam-o-Alaikum!%20I%20have%20a%20question%20about%20your%20products." target="_blank" rel="noopener" aria-label="Chat with Herb and Organics Co. on WhatsApp">💬<span class="sr">Chat on WhatsApp</span></a>
 
+<script>
+document.querySelectorAll(".g-thumb").forEach(function (b) {
+  b.addEventListener("click", function () {
+    var m = document.getElementById("gallery-main");
+    m.src = b.getAttribute("data-full");
+    m.alt = b.getAttribute("data-alt");
+    document.querySelectorAll(".g-thumb").forEach(function (x) { x.classList.remove("is-active"); });
+    b.classList.add("is-active");
+  });
+});
+</script>
 <script src="../assets/script.js"></script>
 <script src="../assets/chatbot.js"></script>
 </body>
