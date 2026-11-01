@@ -27,7 +27,7 @@
   </url>
   <url>
     <loc>https://herborganic.store/blog/</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -154,6 +154,24 @@
   <url>
     <loc>https://herborganic.store/blog/overnight-vs-short-hair-oiling</loc>
     <lastmod>2026-10-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://herborganic.store/blog/beldi-oily-skin-balanced-routine</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://herborganic.store/blog/colour-treated-hair-herbal-wash-routine</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://herborganic.store/blog/pre-wash-oiling-long-hair-sectioning</loc>
+    <lastmod>2026-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
