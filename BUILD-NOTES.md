@@ -132,3 +132,12 @@ These paths are already referenced by the Open Graph/Twitter tags and the Produc
 - `assets/chatbot.js`: oil is launched — products/prices answers (EN/RU/UR) list all 3 products with oil prices; the dedicated oil answer (EN/RU/UR) now gives prices + how to order instead of "coming soon".
 - `sitemap.xml`: added /products/nabat-oil. `sw.js`: cache bumped to herb-organics-v10 + oil page added to precache.
 - PENDING (panel side, not attempted): the Google Sheet Products tab still has oil at price 0 / inactive. The site sells oil at the baked prices regardless; the panel owner should later set the `oil` row to 700 / Yes (and optionally add an `oil_big` row at 1000) so Sheet edits can drive oil prices like the others.
+
+## 2026-11-01 — SEO fixes from the 2026-11-01 audit (structure/meta only — no prices, facts, phone or order flow changed)
+- **Beldi Black Soap page restored**: its product-info column, H1, benefits/how-to panels and order form were lost in the 2026-10-25 price commit (0129394f) — the page had no H1 and no order form (orphan `</form>` remained). Restored from the last complete version (1d202b3d) with current prices (Small Rs. 300 / Large Rs. 500, bundle Rs. 1,299) and the current 6-option product list. H1: "Beldi Black Soap — Traditional Moroccan Soap in Pakistan". Page body copy 374 → ~740 words.
+- **Titles trimmed toward 50–60 chars** (keywords front-loaded): home 71→62, about 67→60, shampoo 88→61, oil 78→55, beldi 71→59, blog index 68→50, beldi-benefits article 88→63.
+- **Meta descriptions rewritten to ~141–158 chars** on home (279→154), about (217→152), shampoo (254→158), oil (263→153), beldi (323→148), blog index (168→158), beldi-benefits (181→146), amla article (188→147), sulphate-free article (186→141) — product pages keep price + COD/order hook inside the limit. OG descriptions trimmed on home (224→149) and oil (169→144).
+- **Product images**: every thumbnail `<img>` on the 3 product pages now carries true width/height + `loading="lazy"` (main gallery image keeps its correct dimensions, left eager) — CLS/LCP fix. No format conversion in this pass.
+- **Internal links**: all 895 relative href/src/data-full values across the 27 pages converted to root-absolute paths. Each product page gained a "From Our Blog" section linking its 3 closest cluster articles with descriptive anchors (blog → product direction already existed).
+- Service worker cache bumped to `herb-organics-v14`.
+- Not done (per audit sequencing): WebP conversion, About E-E-A-T enrichment, AggregateRating (only when genuine reviews exist).
