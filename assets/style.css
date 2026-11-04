@@ -492,11 +492,11 @@ h1, h2, h3, h4 { letter-spacing: .01em; }
 .card { box-shadow: 0 6px 22px rgba(36,22,17,.09); }
 .card .visual { min-height: 0; }
 /* Product photos: one uniform product frame everywhere */
-.card .visual--photo { aspect-ratio: 4 / 3; }
-.card .visual--photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.product-hero .visual--photo { aspect-ratio: 4 / 3; max-height: 520px; }
-.product-hero .visual--photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.visual--photo { background: var(--cream-2); }
+.card .visual--photo { aspect-ratio: 1 / 1; }
+.card .visual--photo img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.product-hero .visual--photo { aspect-ratio: 1 / 1; max-height: 540px; }
+.product-hero .visual--photo img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.visual--photo { background: radial-gradient(circle at 50% 38%, #fffdf8 0%, var(--cream-2) 80%); }
 /* Mobile polish */
 .field input, .field select, .field textarea { font-size: 16px; }
 @media (max-width: 760px) {
