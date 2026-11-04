@@ -1,4 +1,4 @@
-/* Herb & Organics Co. — on-site assistant (chatbot)
+/* Herb & Organics — on-site assistant (chatbot)
    Fully self-contained: no external APIs, no accounts, no keys.
    Answers product questions from a verified-facts knowledge base and replies
    in the visitor's own language: English, Roman Urdu, or Urdu (اردو).
@@ -16,8 +16,8 @@
   /* ---------------- Knowledge base (verified facts only) ---------------- */
   var KB = {
     greeting: {
-      en: "Assalam-o-Alaikum! 🌿 Welcome to Herb & Organics Co. How can I help you? Ask me about our products, prices, ingredients, delivery & COD, or how to order — or tap a topic below.",
-      ru: "Assalam-o-Alaikum! 🌿 Herb & Organics Co. mein khush aamdeed. Mein aap ki kya madad kar sakti hun? Products, price, ingredients, delivery & COD ya order ke baray mein poochein — ya neeche kisi topic par tap karein.",
+      en: "Assalam-o-Alaikum! 🌿 Welcome to Herb & Organics! How can I help you? Ask me about our products, prices, ingredients, delivery & COD, or how to order — or tap a topic below.",
+      ru: "Assalam-o-Alaikum! 🌿 Herb & Organics mein khush aamdeed. Mein aap ki kya madad kar sakti hun? Products, price, ingredients, delivery & COD ya order ke baray mein poochein — ya neeche kisi topic par tap karein.",
       ur: "السلام علیکم! 🌿 ہرب اینڈ آرگینکس کمپنی میں خوش آمدید۔ میں آپ کی کیا مدد کر سکتی ہوں؟ ہماری پروڈکٹس، قیمت، اجزا، ڈیلیوری و کیش آن ڈیلیوری یا آرڈر کے بارے میں پوچھیں — یا نیچے کسی موضوع پر ٹیپ کریں۔"
     },
     products: {
