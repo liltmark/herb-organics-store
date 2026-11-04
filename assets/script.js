@@ -119,7 +119,7 @@
       var qty = currentQty();
       var unit = 0;
       if (v.indexOf("Shampoo") !== -1) { unit += SHAMPOO_PRICE; }
-      if (v.indexOf("Beldi") !== -1) { unit += beldiUnitFor(v); }
+      if (v.indexOf("Herbal Soap") !== -1) { unit += beldiUnitFor(v); }
       if (v.indexOf("Hair Oil") !== -1) { unit += oilUnitFor(v); }
       totalEl.textContent = "Order total: Rs. " + (unit * qty).toLocaleString("en-US") + " (Cash on Delivery)";
     }
@@ -166,7 +166,7 @@
           var v = opt.value;
           var unit = 0;
           if (v.indexOf("Shampoo") !== -1 && byId.shampoo) { unit += byId.shampoo.price; }
-          if (v.indexOf("Beldi") !== -1 && byId.beldi) { unit += beldiUnitFor(v); }
+          if (v.indexOf("Herbal Soap") !== -1 && byId.beldi) { unit += beldiUnitFor(v); }
           if (v.indexOf("Hair Oil") !== -1) { unit += oilUnitFor(v); }
           if (unit > 0) {
             opt.textContent = v.replace(/\s*[—-]\s*Rs\.?\s*[\d,]+.*$/, "") + " — " + fmtRs(unit);
@@ -177,7 +177,7 @@
           var v = opt.value.toLowerCase();
           var p = null;
           if (v.indexOf("shampoo") !== -1) { p = byId.shampoo; }
-          if (v.indexOf("beldi") !== -1) { p = byId.beldi; }
+          if (v.indexOf("herbal soap") !== -1) { p = byId.beldi; }
           if (v.indexOf("hair oil") !== -1) { p = null; }  /* oil options are NEVER removed by the live feed — the sheet oil row is inactive/price 0 until the panel owner activates it, while the site sells oil at the baked prices above. */
           if (p && !p.active) { opt.remove(); }
         });
@@ -243,7 +243,7 @@
 
       var unit = 0;
       if (product.indexOf("Shampoo") !== -1) { unit += SHAMPOO_PRICE; }
-      if (product.indexOf("Beldi") !== -1) { unit += beldiUnitFor(product); }
+      if (product.indexOf("Herbal Soap") !== -1) { unit += beldiUnitFor(product); }
       if (product.indexOf("Hair Oil") !== -1) { unit += oilUnitFor(product); }
 
       var payload = {
