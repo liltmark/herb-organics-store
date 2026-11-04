@@ -1,4 +1,4 @@
-/* Herb & Organics Co. — herborganic.store
+/* Herb & Organics — herborganic.store
    Vanilla JS: mobile nav + on-site order form (FormSubmit AJAX, Cash on Delivery)
    + PWA service worker registration and Install App prompt. No trackers. */
 (function () {
@@ -22,7 +22,7 @@
   installBtn.className = "btn btn-gold btn-sm";
   installBtn.textContent = "📲 Install App";
   installBtn.style.display = "none";
-  installBtn.setAttribute("aria-label", "Install the Herb and Organics Co. app");
+  installBtn.setAttribute("aria-label", "Install the Herb and Organics app");
 
   function placeInstallButton() {
     var footerBottom = document.querySelector(".footer-bottom");
