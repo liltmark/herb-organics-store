@@ -3,7 +3,7 @@
    offline navigation fallback to the homepage. */
 "use strict";
 
-var CACHE_NAME = "herb-organics-v22";
+var CACHE_NAME = "herb-organics-v23";
 
 var CORE_ASSETS = [
   "/",
