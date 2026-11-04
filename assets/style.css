@@ -474,7 +474,8 @@ li { margin-bottom: .35em; }
 .chat-send:hover { background: var(--green-700); }
 @media (max-width: 480px) {
   .chat-fab { right: 12px; bottom: 84px; }
-  .chat-panel { right: 12px; bottom: 152px; }
+  .chat-panel { right: 12px; bottom: 152px; height: min(58dvh, 548px); min-height: 300px; }
+  .chat-close { padding: 10px 12px; font-size: 1.35rem; }
 }
 
 .g-thumbs { display: flex; gap: 10px; margin-top: 12px; }
