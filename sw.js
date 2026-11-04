@@ -1,9 +1,9 @@
-/* Herb & Organics Co. — service worker
+/* Herb & Organics — service worker
    Cache-first for core pages/assets, network-first for everything else,
    offline navigation fallback to the homepage. */
 "use strict";
 
-var CACHE_NAME = "herb-organics-v15";
+var CACHE_NAME = "herb-organics-v16";
 
 var CORE_ASSETS = [
   "/",
