@@ -3,7 +3,7 @@
    offline navigation fallback to the homepage. */
 "use strict";
 
-var CACHE_NAME = "herb-organics-v17";
+var CACHE_NAME = "herb-organics-v18";
 
 var CORE_ASSETS = [
   "/",
@@ -55,8 +55,20 @@ self.addEventListener("fetch", function (event) {
   var url = new URL(req.url);
   if (url.origin !== self.location.origin) { return; } // let WhatsApp/Instagram links go straight to network
 
-  if (isCore(url)) {
-    /* Cache-first for core pages & assets */
+  var isPage = CORE_ASSETS.indexOf(url.pathname) !== -1 || req.mode === "navigate";
+  if (isPage) {
+    /* Network-first for pages: fresh content always, cache only as offline fallback */
+    event.respondWith(
+      fetch(req).then(function (res) {
+        if (res && res.status === 200) {
+          var copy = res.clone();
+          caches.open(CACHE_NAME).then(function (cache) { cache.put(req, copy); });
+        }
+        return res;
+      }).catch(function () { return caches.match(req); })
+    );
+  } else if (isCore(url)) {
+    /* Cache-first for assets & images */
     event.respondWith(
       caches.match(req).then(function (cached) {
         var network = fetch(req).then(function (res) {
