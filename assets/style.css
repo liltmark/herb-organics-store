@@ -508,6 +508,6 @@ h1, h2, h3, h4 { letter-spacing: .01em; }
 }
 
 /* Instagram fallback panel (replaces embeds that no longer load, 2026-11-04) */
-.ig-fallback { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 24px; text-align: center; background: linear-gradient(160deg, var(--green-800), var(--green-900)); color: #f5eddf; text-decoration: none; font-family: Georgia, 'Times New Roman', serif; font-size: 1.05rem; }
+.ig-fallback { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; min-height: 380px; padding: 24px; text-align: center; background: linear-gradient(160deg, var(--green-800), var(--green-900)); color: #f5eddf; text-decoration: none; font-family: Georgia, 'Times New Roman', serif; font-size: 1.05rem; border-radius: 12px; }
 .ig-fallback:hover { text-decoration: none; filter: brightness(1.12); }
 .ig-fallback .ig-play { width: 58px; height: 58px; border-radius: 50%; border: 2px solid var(--gold-soft); color: var(--gold-soft); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; padding-left: 4px; }
