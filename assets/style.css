@@ -89,7 +89,7 @@ li { margin-bottom: .35em; }
 .logo-text strong { font-family: var(--font-head); font-size: 1.12rem; color: var(--green-900); display: block; }
 .logo-text span { font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); }
 .main-nav { display: flex; gap: 26px; align-items: center; }
-.main-nav a {
+.main-nav a:not(.btn) {
   text-decoration: none; font-weight: 600; color: var(--green-900); font-size: .98rem;
 }
 .main-nav a:hover, .main-nav a[aria-current="page"] { color: var(--gold); }
