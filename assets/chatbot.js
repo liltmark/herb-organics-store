@@ -2,7 +2,7 @@
    Fully self-contained: no external APIs, no accounts, no keys.
    Answers product questions from a verified-facts knowledge base and replies
    in the visitor's own language: English, Roman Urdu, or Urdu (اردو).
-   Rules: prices are stated plainly (Shampoo Rs. 999, Beldi Black Soap Rs. 300 Small Packet / Rs. 500 Large Packet, Nabat Hair Oil Rs. 700 Small Bottle / Rs. 1,000 Big Bottle). Delivery time/charges are
+   Rules: prices are stated plainly (Shampoo Rs. 999, Nabat Herbal Soap Rs. 300 Small Packet / Rs. 500 Large Packet, Nabat Hair Oil Rs. 700 Small Bottle / Rs. 1,000 Big Bottle). Delivery time/charges are
    NOT published — the team confirms them on the confirmation call.
    Ordering happens ONLY through the order form on this website;
    WhatsApp (+92 343 7124768) is for questions only. */
@@ -21,8 +21,8 @@
       ur: "السلام علیکم! 🌿 ہرب اینڈ آرگینکس کمپنی میں خوش آمدید۔ میں آپ کی کیا مدد کر سکتی ہوں؟ ہماری پروڈکٹس، قیمت، اجزا، ڈیلیوری و کیش آن ڈیلیوری یا آرڈر کے بارے میں پوچھیں — یا نیچے کسی موضوع پر ٹیپ کریں۔"
     },
     products: {
-      en: "We have three products:\n1) NABAT Herbal & Organic Shampoo (300 ml) — Rs. 999. Sulphate free & paraben free, made with 50+ natural ingredients.\n2) Beldi Black Soap (Traditional Moroccan) — Rs. 300 (Small Packet) / Rs. 500 (Large Packet). An olive-based paste soap for deep cleansing and gentle exfoliation.\n3) Nabat Hair Oil — Rs. 700 (Small Bottle) / Rs. 1,000 (Big Bottle). A herbal hair oil in a pump bottle, special made for you.",
-      ru: "Hamari 3 products hain:\n1) NABAT Herbal & Organic Shampoo (300 ml) — Rs. 999. Sulphate aur paraben free, 50+ natural ingredients se bana.\n2) Beldi Black Soap (Traditional Moroccan) — Rs. 300 (Small Packet) / Rs. 500 (Large Packet). Zaitoon (olive) se bana paste soap, deep cleansing aur gentle exfoliation ke liye.\n3) Nabat Hair Oil — Rs. 700 (Small Bottle) / Rs. 1,000 (Big Bottle). Pump bottle mein herbal hair oil, special made for you.",
+      en: "We have three products:\n1) NABAT Herbal & Organic Shampoo (300 ml) — Rs. 999. Sulphate free & paraben free, made with 50+ natural ingredients.\n2) Nabat Herbal Soap (Traditional Moroccan) — Rs. 300 (Small Packet) / Rs. 500 (Large Packet). An olive-based paste soap for deep cleansing and gentle exfoliation.\n3) Nabat Hair Oil — Rs. 700 (Small Bottle) / Rs. 1,000 (Big Bottle). A herbal hair oil in a pump bottle, special made for you.",
+      ru: "Hamari 3 products hain:\n1) NABAT Herbal & Organic Shampoo (300 ml) — Rs. 999. Sulphate aur paraben free, 50+ natural ingredients se bana.\n2) Nabat Herbal Soap (Traditional Moroccan) — Rs. 300 (Small Packet) / Rs. 500 (Large Packet). Zaitoon (olive) se bana paste soap, deep cleansing aur gentle exfoliation ke liye.\n3) Nabat Hair Oil — Rs. 700 (Small Bottle) / Rs. 1,000 (Big Bottle). Pump bottle mein herbal hair oil, special made for you.",
       ur: "ہماری تین پروڈکٹس ہیں:\n۱) نبات ہربل آرگینک شیمپو (300 ملی لیٹر) — 999 روپے۔ سلفیٹ فری اور پیرابن فری، 50 سے زائد قدرتی اجزا سے تیار۔\n۲) بیلدی بلیک سوپ (روایتی مراکشی) — چھوٹا پیکٹ 300 روپے / بڑا پیکٹ 500 روپے۔ زیتون سے بنا پیسٹ صابن، گہری صفائی اور نرمی سے مردہ جلد اتارنے کے لیے۔\n۳) نبات ہیئر آئل — چھوٹی بوتل 700 روپے / بڑی بوتل 1,000 روپے۔ پمپ بوتل میں ہربل ہیئر آئل، خاص آپ کے لیے بنایا گیا۔"
     },
     shampoo_info: {
@@ -36,23 +36,23 @@
       ur: "نبات ہربل آرگینک شیمپو (300 ملی لیٹر) کی قیمت 999 روپے ہے۔ ادائیگی کیش آن ڈیلیوری ہے — پیسے صرف پارسل ملنے پر دیں۔"
     },
     prices: {
-      en: "Our prices:\n• NABAT Herbal & Organic Shampoo (300 ml): Rs. 999\n• Beldi Black Soap (Traditional Moroccan): Rs. 300 (Small Packet) / Rs. 500 (Large Packet)\n• Nabat Hair Oil: Rs. 700 (Small Bottle) / Rs. 1,000 (Big Bottle)\nPayment is Cash on Delivery — you pay only when your parcel arrives.",
-      ru: "Hamari prices:\n• NABAT Herbal & Organic Shampoo (300 ml): Rs. 999\n• Beldi Black Soap (Traditional Moroccan): Rs. 300 (Small Packet) / Rs. 500 (Large Packet)\n• Nabat Hair Oil: Rs. 700 (Small Bottle) / Rs. 1,000 (Big Bottle)\nPayment Cash on Delivery hai — paisay sirf parcel milne par dein.",
+      en: "Our prices:\n• NABAT Herbal & Organic Shampoo (300 ml): Rs. 999\n• Nabat Herbal Soap (Traditional Moroccan): Rs. 300 (Small Packet) / Rs. 500 (Large Packet)\n• Nabat Hair Oil: Rs. 700 (Small Bottle) / Rs. 1,000 (Big Bottle)\nPayment is Cash on Delivery — you pay only when your parcel arrives.",
+      ru: "Hamari prices:\n• NABAT Herbal & Organic Shampoo (300 ml): Rs. 999\n• Nabat Herbal Soap (Traditional Moroccan): Rs. 300 (Small Packet) / Rs. 500 (Large Packet)\n• Nabat Hair Oil: Rs. 700 (Small Bottle) / Rs. 1,000 (Big Bottle)\nPayment Cash on Delivery hai — paisay sirf parcel milne par dein.",
       ur: "ہماری قیمتیں:\n• نبات ہربل آرگینک شیمپو (300 ملی لیٹر): 999 روپے\n• بیلدی بلیک سوپ (روایتی مراکشی): چھوٹا پیکٹ 300 روپے / بڑا پیکٹ 500 روپے\n• نبات ہیئر آئل: چھوٹی بوتل 700 روپے / بڑی بوتل 1,000 روپے\nادائیگی کیش آن ڈیلیوری ہے — پیسے صرف پارسل ملنے پر دیں۔"
     },
     beldi_info: {
-      en: "Beldi Black Soap is a traditional Moroccan olive-based paste soap. It deep cleanses, gently exfoliates dead skin cells, unclogs pores and nourishes the skin with olive goodness and natural minerals. It is a classic step of the hammam ritual — for body, hands and feet, and the face (with caution). For best results, use 1–2 times a week.",
-      ru: "Beldi Black Soap aik riwayati Moroccan sabun hai jo zaitoon (olive) se banta hai — ye aik paste ki shakal ka sabun hai. Ye gehri safai karta hai, dead skin ko narmi se exfoliate karta hai, pores ko saaf rakhta hai aur zaitoon ki khubi se skin ko nourish karta hai. Ye hammam ritual ka classic step hai — jism, hathon aur paon ke liye, aur chehre par (ehtiyaat ke saath). Behtareen results ke liye haftay mein 1–2 martaba istemal karein.",
+      en: "Nabat Herbal Soap is a traditional Moroccan olive-based paste soap. It deep cleanses, gently exfoliates dead skin cells, unclogs pores and nourishes the skin with olive goodness and natural minerals. It is a classic step of the hammam ritual — for body, hands and feet, and the face (with caution). For best results, use 1–2 times a week.",
+      ru: "Nabat Herbal Soap aik riwayati Moroccan sabun hai jo zaitoon (olive) se banta hai — ye aik paste ki shakal ka sabun hai. Ye gehri safai karta hai, dead skin ko narmi se exfoliate karta hai, pores ko saaf rakhta hai aur zaitoon ki khubi se skin ko nourish karta hai. Ye hammam ritual ka classic step hai — jism, hathon aur paon ke liye, aur chehre par (ehtiyaat ke saath). Behtareen results ke liye haftay mein 1–2 martaba istemal karein.",
       ur: "بیلدی بلیک سوپ ایک روایتی مراکشی صابن ہے جو زیتون سے بنتا ہے — یہ پیسٹ کی شکل کا صابن ہے۔ یہ گہری صفائی کرتا ہے، مردہ جلد کو نرمی سے صاف کرتا ہے، مسام کھولتا ہے اور زیتون کی خوبی سے جلد کو غذائیت دیتا ہے۔ یہ حمام کی رسم کا کلاسیکی حصہ ہے — جسم، ہاتھوں اور پاؤں کے لیے، اور چہرے پر (احتیاط کے ساتھ)۔ بہترین نتائج کے لیے ہفتے میں 1–2 مرتبہ استعمال کریں۔"
     },
     beldi_price: {
-      en: "Beldi Black Soap costs Rs. 300 (Small Packet) / Rs. 500 (Large Packet). Payment is Cash on Delivery — you pay only when your parcel arrives. To place an order, please use the order form on this website.",
-      ru: "Beldi Black Soap ki price Small Packet Rs. 300 aur Large Packet Rs. 500 hai. Payment Cash on Delivery hai — paisay sirf parcel milne par dein. Order ke liye is website ka order form istemal karein.",
+      en: "Nabat Herbal Soap costs Rs. 300 (Small Packet) / Rs. 500 (Large Packet). Payment is Cash on Delivery — you pay only when your parcel arrives. To place an order, please use the order form on this website.",
+      ru: "Nabat Herbal Soap ki price Small Packet Rs. 300 aur Large Packet Rs. 500 hai. Payment Cash on Delivery hai — paisay sirf parcel milne par dein. Order ke liye is website ka order form istemal karein.",
       ur: "بیلدی بلیک سوپ کی قیمت چھوٹے پیکٹ کی 300 روپے اور بڑے پیکٹ کی 500 روپے ہے۔ ادائیگی کیش آن ڈیلیوری ہے — پیسے صرف پارسل ملنے پر دیں۔ آرڈر کے لیے اس ویب سائٹ کا آرڈر فارم استعمال کریں۔"
     },
     ingredients: {
-      en: "NABAT Shampoo is made with 50+ natural ingredients. The key ones are: Amla, Reetha, Shikakai, Hibiscus, Aloe Vera, Rosemary, Castor and Vitamin E. It is sulphate free, paraben free and has no synthetic colors. Beldi Black Soap is an olive-based traditional Moroccan paste soap with natural minerals.",
-      ru: "NABAT Shampoo 50+ natural ingredients se banta hai. Ahem ajza ye hain: Amla, Reetha, Shikakai, Hibiscus, Aloe Vera, Rosemary, Castor aur Vitamin E. Ye sulphate free, paraben free hai aur is mein koi synthetic rang nahi. Beldi Black Soap zaitoon (olive) par mabni riwayati Moroccan paste sabun hai jis mein natural minerals hain.",
+      en: "NABAT Shampoo is made with 50+ natural ingredients. The key ones are: Amla, Reetha, Shikakai, Hibiscus, Aloe Vera, Rosemary, Castor and Vitamin E. It is sulphate free, paraben free and has no synthetic colors. Nabat Herbal Soap is an olive-based traditional Moroccan paste soap with natural minerals.",
+      ru: "NABAT Shampoo 50+ natural ingredients se banta hai. Ahem ajza ye hain: Amla, Reetha, Shikakai, Hibiscus, Aloe Vera, Rosemary, Castor aur Vitamin E. Ye sulphate free, paraben free hai aur is mein koi synthetic rang nahi. Nabat Herbal Soap zaitoon (olive) par mabni riwayati Moroccan paste sabun hai jis mein natural minerals hain.",
       ur: "نبات شیمپو 50 سے زائد قدرتی اجزا سے بنتا ہے۔ اہم اجزا یہ ہیں: آملہ، ریٹھا، شیکاکائی، ہیبسکس، ایلو ویرا، روزمیری، ارنڈی اور وٹامن ای۔ یہ سلفیٹ فری، پیرابن فری ہے اور اس میں کوئی مصنوعی رنگ نہیں۔ بیلدی بلیک سوپ زیتون پر مبنی روایتی مراکشی پیسٹ صابن ہے جس میں قدرتی معدنیات شامل ہیں۔"
     },
     shampoo_use: {
@@ -61,8 +61,8 @@
       ur: "نبات شیمپو استعمال کا طریقہ:\n۱) گیلے بالوں پر لگائیں۔\n۲) سر کی جلد پر نرمی سے مالش کریں۔\n۳) جھاگ بنائیں۔\n۴) اچھی طرح دھو لیں۔\n۵) ضرورت ہو تو دوبارہ لگائیں۔"
     },
     beldi_use: {
-      en: "How to use Beldi Black Soap:\n1) Apply to damp skin (body, or face with caution).\n2) Leave for a few minutes to soften dead skin.\n3) Scrub gently with a traditional exfoliating mitt (kessa).\n4) Rinse thoroughly.\nUse 1–2 times per week.",
-      ru: "Beldi Black Soap istemal ka tareeqa:\n1) Nam (geeli) skin par lagayein — jism par, ya chehre par ehtiyaat ke saath.\n2) Chand minute chhor dein taake dead skin narm ho jaye.\n3) Riwayati exfoliating mitt (kessa) se narmi se scrub karein.\n4) Achi tarah dho lein.\nHaftay mein 1–2 martaba istemal karein.",
+      en: "How to use Nabat Herbal Soap:\n1) Apply to damp skin (body, or face with caution).\n2) Leave for a few minutes to soften dead skin.\n3) Scrub gently with a traditional exfoliating mitt (kessa).\n4) Rinse thoroughly.\nUse 1–2 times per week.",
+      ru: "Nabat Herbal Soap istemal ka tareeqa:\n1) Nam (geeli) skin par lagayein — jism par, ya chehre par ehtiyaat ke saath.\n2) Chand minute chhor dein taake dead skin narm ho jaye.\n3) Riwayati exfoliating mitt (kessa) se narmi se scrub karein.\n4) Achi tarah dho lein.\nHaftay mein 1–2 martaba istemal karein.",
       ur: "بیلدی بلیک سوپ استعمال کا طریقہ:\n۱) نم جلد پر لگائیں — جسم پر، یا چہرے پر احتیاط کے ساتھ۔\n۲) چند منٹ چھوڑ دیں تاکہ مردہ جلد نرم ہو جائے۔\n۳) روایتی ایکسفولیٹنگ دستانے (کیسا) سے نرمی سے رگڑیں۔\n۴) اچھی طرح دھو لیں۔\nہفتے میں 1–2 مرتبہ استعمال کریں۔"
     },
     delivery: {
@@ -150,7 +150,7 @@
       /hair oil|nabat oil|\boil\b|تیل/i
     ]},
     { id: "beldi_info", re: [
-      /beldi|black soap|sabun|بیلدی|صابن/i
+      /beldi|black soap|herbal soap|sabun|بیلدی|صابن/i
     ]},
     { id: "shampoo_info", re: [
       /nabat|shampoo|شیمپو/i
