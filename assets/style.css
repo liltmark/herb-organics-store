@@ -79,7 +79,7 @@ li { margin-bottom: .35em; }
 .logo { text-decoration: none; display: flex; align-items: center; gap: 12px; }
 .logo-mark {
   width: 44px; height: 44px; border-radius: 50%;
-  background: var(--green-800); color: var(--cream);
+  background: linear-gradient(160deg, #bd9250, var(--gold)); color: #241611;
   display: grid; place-items: center;
   font-family: var(--font-head); font-size: 1.05rem; font-weight: 700;
   border: 2px solid var(--gold-soft);
