@@ -1,27 +1,27 @@
 /* ============================================================
    Herb & Organics Co. — herborganic.store
    Single stylesheet. Mobile-first, no external assets.
-   Palette: deep green / cream / gold
+   Palette: premium woody — espresso walnut / warm ivory / antique brass
    ============================================================ */
 
 :root {
-  --green-900: #14351f;
-  --green-800: #1e4d2b;
-  --green-700: #2a6b3c;
-  --green-100: #e3efe2;
-  --green-50:  #f0f5ec;
-  --cream:     #faf6ee;
-  --cream-2:   #f3ecdb;
-  --gold:      #b98a2f;
-  --gold-soft: #d9b45c;
-  --ink:       #22301f;
-  --muted:     #5c6b57;
-  --line:      #ddd5c2;
+  --green-900: #241611;
+  --green-800: #3e2a1e;
+  --green-700: #5a4030;
+  --green-100: #efe5d8;
+  --green-50:  #f7f1e7;
+  --cream:     #fbf7ef;
+  --cream-2:   #f1e7d3;
+  --gold:      #a87b3f;
+  --gold-soft: #cba35c;
+  --ink:       #2b211a;
+  --muted:     #7a6a5c;
+  --line:      #e2d6c0;
   --white:     #ffffff;
   --wa:        #1faa55;
   --wa-dark:   #178a43;
-  --radius:    16px;
-  --shadow:    0 10px 30px rgba(20, 53, 31, .12);
+  --radius:    14px;
+  --shadow:    0 12px 32px rgba(36, 22, 17, .14);
   --maxw:      1140px;
   --font-head: Georgia, "Times New Roman", serif;
   --font-body: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -55,7 +55,7 @@ li { margin-bottom: .35em; }
 .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
 .section { padding: 64px 0; }
 .section--alt { background: var(--green-50); }
-.section--dark { background: var(--green-900); color: #e9f0e4; }
+.section--dark { background: var(--green-900); color: #f0e7d8; }
 .section--dark h2, .section--dark h3 { color: #fff; }
 .eyebrow {
   text-transform: uppercase; letter-spacing: .14em; font-size: .78rem;
@@ -68,7 +68,7 @@ li { margin-bottom: .35em; }
 /* ---------- Header ---------- */
 .site-header {
   position: sticky; top: 0; z-index: 50;
-  background: rgba(250, 246, 238, .97);
+  background: rgba(251, 247, 239, .97);
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(6px);
 }
@@ -108,7 +108,7 @@ li { margin-bottom: .35em; }
 .btn-wa { background: var(--wa); color: #fff; }
 .btn-wa:hover { background: var(--wa-dark); }
 .btn-gold { background: var(--gold); color: #fff; }
-.btn-gold:hover { background: #a5791f; }
+.btn-gold:hover { background: #96702f; }
 .btn-outline { border-color: var(--green-800); color: var(--green-800); background: transparent; }
 .btn-outline:hover { background: var(--green-800); color: #fff; }
 .btn-light { background: var(--cream); color: var(--green-900); }
@@ -117,12 +117,12 @@ li { margin-bottom: .35em; }
 
 /* ---------- Hero ---------- */
 .hero {
-  background: linear-gradient(160deg, var(--green-900) 0%, var(--green-800) 55%, var(--green-700) 100%);
-  color: #eef4e8; padding: 72px 0 80px;
+  background: radial-gradient(circle at 85% 0%, rgba(203,163,92,.20), transparent 50%), linear-gradient(155deg, #1d110a 0%, var(--green-900) 45%, var(--green-800) 100%);
+  color: #f5eddf; padding: 72px 0 80px;
 }
 .hero h1 { color: #fff; }
 .hero .tagline { color: var(--gold-soft); font-size: 1.05rem; letter-spacing: .04em; }
-.hero p { color: #d7e4cf; max-width: 620px; }
+.hero p { color: #dccbb6; max-width: 620px; }
 .hero-badges { display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0 28px; }
 .badge {
   border: 1px solid rgba(217, 180, 92, .55); color: #f2e7c8;
@@ -145,7 +145,7 @@ li { margin-bottom: .35em; }
 .visual--dark {
   background:
     radial-gradient(circle at 80% 10%, rgba(217,180,92,.22), transparent 55%),
-    linear-gradient(150deg, #2c4630, var(--green-900));
+    linear-gradient(150deg, #4a3423, var(--green-900));
 }
 .bottle { position: relative; margin: 0 auto 18px; }
 .bottle-pump {
@@ -205,7 +205,7 @@ li { margin-bottom: .35em; }
 @media (min-width: 760px) { .grid-3 { grid-template-columns: repeat(3, 1fr); } .grid-2 { grid-template-columns: repeat(2, 1fr); } }
 .card {
   background: var(--white); border: 1px solid var(--line); border-radius: var(--radius);
-  overflow: hidden; box-shadow: 0 4px 16px rgba(20,53,31,.07);
+  overflow: hidden; box-shadow: 0 4px 18px rgba(36,22,17,.08);
   display: flex; flex-direction: column;
 }
 .card .visual { border-radius: 0; box-shadow: none; min-height: 300px; }
@@ -300,17 +300,17 @@ li { margin-bottom: .35em; }
 .faq-item .faq-a p { margin: 0; }
 
 /* ---------- Footer ---------- */
-.site-footer { background: var(--green-900); color: #cfddc6; padding: 56px 0 0; margin-top: 0; }
+.site-footer { background: #1d110a; color: #d9c9b4; padding: 56px 0 0; margin-top: 0; }
 .footer-grid { display: grid; gap: 34px; padding-bottom: 40px; }
 @media (min-width: 820px) { .footer-grid { grid-template-columns: 1.4fr 1fr 1fr; } }
 .site-footer h3, .site-footer h4 { color: #fff; }
-.site-footer a { color: #cfddc6; text-decoration: none; }
+.site-footer a { color: #d9c9b4; text-decoration: none; }
 .site-footer a:hover { color: var(--gold-soft); text-decoration: underline; }
 .footer-links { list-style: none; padding: 0; margin: 0; }
 .footer-links li { margin-bottom: 9px; }
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,.14); padding: 18px 0;
-  font-size: .88rem; color: #9db894; display: flex; flex-wrap: wrap; gap: 8px 22px; justify-content: space-between;
+  font-size: .88rem; color: #a68f74; display: flex; flex-wrap: wrap; gap: 8px 22px; justify-content: space-between;
 }
 
 /* ---------- Floating WhatsApp ---------- */
@@ -429,12 +429,12 @@ li { margin-bottom: .35em; }
   width: min(372px, calc(100vw - 24px));
   height: min(548px, calc(100dvh - 190px)); min-height: 320px;
   background: var(--cream); border: 1px solid var(--line); border-radius: 18px;
-  box-shadow: 0 18px 44px rgba(20,53,31,.28);
+  box-shadow: 0 18px 44px rgba(36,22,17,.30);
   display: none; flex-direction: column; overflow: hidden;
 }
 .chat-panel.open { display: flex; }
 .chat-head {
-  background: linear-gradient(135deg, var(--green-900), var(--green-800));
+  background: linear-gradient(135deg, #1d110a, var(--green-800));
   color: #fff; padding: 13px 16px;
   display: flex; align-items: center; justify-content: space-between; gap: 10px;
 }
@@ -453,7 +453,7 @@ li { margin-bottom: .35em; }
   border: none; border-radius: 999px; padding: 8px 18px;
   font-size: .9rem; font-weight: 700; cursor: pointer; font-family: inherit;
 }
-.chat-order-btn:hover { background: #a5791f; }
+.chat-order-btn:hover { background: #96702f; }
 .chat-chips { display: flex; flex-wrap: wrap; gap: 6px; padding: 10px 12px 2px; }
 .chat-chip {
   border: 1.5px solid var(--gold); background: #fff; color: var(--green-900);
@@ -482,3 +482,27 @@ li { margin-bottom: .35em; }
 .g-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .g-thumb.is-active { border-color: var(--gold); }
 .g-thumb:hover { border-color: var(--green-900); }
+
+/* ---------- Premium woody polish + product-shaped images (2026-11-04) ---------- */
+img { height: auto; }
+h1, h2, h3, h4 { letter-spacing: .01em; }
+.btn { border-radius: 12px; }
+.btn-gold { background: linear-gradient(160deg, #bd9250, var(--gold)); }
+.btn-order { box-shadow: 0 6px 18px rgba(36,22,17,.18); }
+.card { box-shadow: 0 6px 22px rgba(36,22,17,.09); }
+.card .visual { min-height: 0; }
+/* Product photos: one uniform product frame everywhere */
+.card .visual--photo { aspect-ratio: 4 / 3; }
+.card .visual--photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.product-hero .visual--photo { aspect-ratio: 4 / 3; max-height: 520px; }
+.product-hero .visual--photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.visual--photo { background: var(--cream-2); }
+/* Mobile polish */
+.field input, .field select, .field textarea { font-size: 16px; }
+@media (max-width: 760px) {
+  .hero { padding: 50px 0 58px; }
+  .order-box { padding: 22px 18px; }
+  .card-body { padding: 20px 18px; }
+  .product-hero { gap: 24px; padding-bottom: 42px; }
+  .main-nav a { padding: 6px 2px; }
+}
