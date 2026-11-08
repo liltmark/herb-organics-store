@@ -317,27 +317,7 @@
 /* v35 (2026-11-08): do looks (Classic/Pink) switch + products side drawer */
 (function () {
   try {
-    /* theme */
-    var saved = null;
-    try { saved = localStorage.getItem("herb-theme"); } catch (e) {}
-        function applyTheme(pink) {
-      /* v37: leaf logo dono looks me aik hi rehta hai — no logo swap */
-      document.body.classList.toggle("theme-pink", pink);
-    }
-    applyTheme(saved !== "classic"); /* his order 2026-11-08: Pink is the default look now */
-    var tbtn = document.createElement("button");
-    tbtn.type = "button"; tbtn.className = "theme-btn";
-    function tlabel() { tbtn.textContent = document.body.classList.contains("theme-pink") ? "\uD83C\uDF3F Classic Look" : "\uD83C\uDF38 Pink Look"; }
-    tlabel();
-    tbtn.addEventListener("click", function () {
-      var pink = !document.body.classList.contains("theme-pink");
-      applyTheme(pink);
-      try { localStorage.setItem("herb-theme", pink ? "pink" : "classic"); } catch (e) {}
-      tlabel();
-    });
-    var hin = document.querySelector(".header-in");
-    var navToggle = document.querySelector(".nav-toggle");
-    if (hin) { hin.insertBefore(tbtn, navToggle || null); }
+    /* v38: theme switch khatam — store sirf Pink hai */
     /* products drawer */
     var items = [
       { img: "/images/v3/shampoo-studio-1.webp", name: "NABAT Herbal & Organic Shampoo", price: "Rs. 999 / 300 ml", link: "/products/nabat-shampoo" },
