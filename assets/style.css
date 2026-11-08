@@ -750,3 +750,40 @@ html, body { overflow-x: hidden; overflow-x: clip; }
   --bg2: #F6F8EF;
 }
 .ot-bar { background: linear-gradient(90deg, #123E24, #1C5B34 55%, #123E24); color: #F1E7C8; }
+
+/* ============================================================
+   v47 — PINK KHATAM, ASAL HARABHARA (2026-11-08 night):
+   Diagnose: asal rang doosry token set (--green-800 waghera)
+   se a rahy thy, jo v38 me pink ho gaye thy — v45/v46 ke
+   --pink token un par asar hi nahi kar rahy thy, is liye
+   screen par pink reh gaya. Ab wohi token seedha gehre
+   hare + gold par set kar diye hain, aur v38 ke tamam
+   pink hisse (hero, buttons, chat, drawer, footer) bhi
+   aik aik karke hara/gold kar diye hain. Pink ka koi
+   nishan baqi nahi.
+   ============================================================ */
+:root {
+  --green-900: #0E2A1A;
+  --green-800: #175734;
+  --green-700: #1E6B41;
+  --green-100: #DDEEDD;
+  --green-50: #EFF6EC;
+  --gold: #B8862F;
+  --gold-soft: #D9A83F;
+  --ink: #22301F;
+  --muted: #68755F;
+  --line: #D8E2CB;
+  --shadow: 0 8px 26px rgba(18, 62, 36, .13);
+}
+.hero { background: radial-gradient(circle at 88% 6%, rgba(217,168,63,.25), transparent 46%), linear-gradient(155deg, #F7FAF1 0%, #EAF3E1 58%, #DDEBD2 100%); }
+.site-footer { background: #0E2A1A; }
+.logo-text strong { color: #123E24; }
+.logo-text span { color: #1E6B41; }
+.chat-fab { background: #175734; border-color: #D9A83F; }
+.chat-head { background: linear-gradient(135deg, #0E2A1A, #1E6B41); }
+.chat-msg.user { background: #175734; }
+.chat-send { background: #175734; }
+.btn-order { background: linear-gradient(135deg, #22733F, #175734 48%, #123E24); }
+.p-fab { background: #175734; border-color: #D9A83F; }
+.p-drawer-head { background: #175734; }
+.p-item .p-price { color: #175734; }
