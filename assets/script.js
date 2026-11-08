@@ -121,7 +121,7 @@
       if (v.indexOf("Shampoo") !== -1) { unit += SHAMPOO_PRICE; }
       if (v.indexOf("Herbal Soap") !== -1) { unit += beldiUnitFor(v); }
       if (v.indexOf("Hair Oil") !== -1) { unit += oilUnitFor(v); }
-      totalEl.textContent = "Order total: Rs. " + (unit * qty).toLocaleString("en-US") + " (Cash on Delivery)";
+      totalEl.textContent = "Order total: Rs. " + (unit * qty + 200).toLocaleString("en-US") + " (incl. Rs. 200 delivery · Cash on Delivery)";
     }
     if (productSel) { productSel.addEventListener("change", updateTotal); }
     if (qtyInput) {
