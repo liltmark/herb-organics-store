@@ -732,3 +732,21 @@ html, body { overflow-x: hidden; overflow-x: clip; }
   --bg2: #FBF4EA;
 }
 .ot-bar { background: linear-gradient(90deg, #5C1220, #7A1E2B 55%, #5C1220); color: #F6E3C8; }
+
+/* ============================================================
+   v46 — HARABHARA PREMIUM look (2026-11-08 night, sahaib ka
+   final order): maroon bhi khatam — ab SIMPLE gehra hara
+   (leaf green) + gold. Yehi rang products aur gold-ring
+   logo se asal matching hai. Baqi setting waisi ki waisi.
+   ============================================================ */
+:root {
+  --pink: #1C5B34;
+  --magenta: #123E24;
+  --rose: #4C956C;
+  --orange: #B8862F;
+  --yellow: #E3C565;
+  --pink-soft: #F2F7EE;
+  --pink-tint: #E2EDD8;
+  --bg2: #F6F8EF;
+}
+.ot-bar { background: linear-gradient(90deg, #123E24, #1C5B34 55%, #123E24); color: #F1E7C8; }
