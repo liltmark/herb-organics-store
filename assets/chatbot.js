@@ -190,7 +190,7 @@
   fab.type = "button";
   fab.className = "chat-fab";
   fab.setAttribute("aria-label", "Chat with the Herb & Organics Assistant");
-  fab.innerHTML = "💬";
+  fab.innerHTML = "🤖";
 
   var panel = document.createElement("section");
   panel.className = "chat-panel";
