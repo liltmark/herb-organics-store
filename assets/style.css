@@ -677,3 +677,29 @@ body.theme-pink .p-item .p-price { color: #c2255c; }
    dark green in BOTH looks, bilkul reference wali tarah. */
 .logo-text strong { font-family: 'Segoe UI', Arial, Helvetica, sans-serif; text-transform: uppercase; letter-spacing: .05em; }
 body.theme-pink .logo-text strong { color: #14532d; }
+
+/* ============================================================
+   v38 — Classic KHATAM (his order 2026-11-08 night):
+   store ab sirf aur sirf Pink hai. Pink palette bina shart lagu.
+   ============================================================ */
+:root {
+  --green-900: #333333; --green-800: #e73370; --green-700: #ef4684;
+  --green-100: #fce4ee; --green-50: #fdf2f7;
+  --gold: #ef4684; --gold-soft: #f78fb8;
+  --ink: #262626; --muted: #6f5a64; --line: #f3d9e4;
+  --shadow: 0 8px 26px rgba(239, 70, 132, .12);
+}
+.ot-bar { background: linear-gradient(90deg, #d81b60, #ef4684 50%, #d81b60); }
+.hero { background: radial-gradient(circle at 88% 6%, rgba(255,140,175,.35), transparent 46%), linear-gradient(155deg, #fff6f9 0%, #ffe4ef 58%, #ffd6e6 100%); }
+.site-footer { background: #2a0e1a; }
+.logo-text strong { color: #14532d; }
+.logo-text span { color: #ef4684; }
+.chat-fab { background: #e73370; border-color: #f78fb8; }
+.chat-head { background: linear-gradient(135deg, #2a0e1a, #e73370); }
+.chat-msg.user { background: #e73370; }
+.chat-send { background: #e73370; }
+.btn-order { background: linear-gradient(135deg, #ff5c8a, #ef4684 48%, #d81b60); }
+.p-fab { background: #e73370; border-color: #f78fb8; }
+.p-drawer-head { background: #e73370; }
+.p-item .p-price { color: #c2255c; }
+.theme-btn { display: none !important; }
