@@ -703,3 +703,13 @@ body.theme-pink .logo-text strong { color: #14532d; }
 .p-drawer-head { background: #e73370; }
 .p-item .p-price { color: #c2255c; }
 .theme-btn { display: none !important; }
+
+/* ============================================================
+   v44 — side ki khali space ka fix (2026-11-08 night):
+   chalti pati (marquee) ka track page se bahar ja raha tha,
+   jis se mobile par pura page sikur kar left par aa jata tha
+   aur right par safed jagah reh jati thi. Ab koi bhi hissa
+   page ki chaudai se bahar nahi jayega.
+   ============================================================ */
+html, body { overflow-x: hidden; overflow-x: clip; }
+.ot-bar { overflow: hidden; }
