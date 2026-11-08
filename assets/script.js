@@ -320,13 +320,27 @@
     /* theme */
     var saved = null;
     try { saved = localStorage.getItem("herb-theme"); } catch (e) {}
-    if (saved === "pink") { document.body.classList.add("theme-pink"); }
+    function applyTheme(pink) {
+      document.body.classList.toggle("theme-pink", pink);
+      document.querySelectorAll("img").forEach(function (im) {
+        var s = im.getAttribute("src") || "";
+        if (pink) {
+          if (s.indexOf("logo-mark.png") > -1) { im.setAttribute("src", s.replace("logo-mark.png", "logo-mark-pink.png")); }
+          if (s.indexOf("logo-full.png") > -1) { im.setAttribute("src", s.replace("logo-full.png", "logo-full-pink.png")); }
+        } else {
+          if (s.indexOf("logo-mark-pink.png") > -1) { im.setAttribute("src", s.replace("logo-mark-pink.png", "logo-mark.png")); }
+          if (s.indexOf("logo-full-pink.png") > -1) { im.setAttribute("src", s.replace("logo-full-pink.png", "logo-full.png")); }
+        }
+      });
+    }
+    applyTheme(saved !== "classic"); /* his order 2026-11-08: Pink is the default look now */
     var tbtn = document.createElement("button");
     tbtn.type = "button"; tbtn.className = "theme-btn";
     function tlabel() { tbtn.textContent = document.body.classList.contains("theme-pink") ? "\uD83C\uDF3F Classic Look" : "\uD83C\uDF38 Pink Look"; }
     tlabel();
     tbtn.addEventListener("click", function () {
-      var pink = document.body.classList.toggle("theme-pink");
+      var pink = !document.body.classList.contains("theme-pink");
+      applyTheme(pink);
       try { localStorage.setItem("herb-theme", pink ? "pink" : "classic"); } catch (e) {}
       tlabel();
     });
