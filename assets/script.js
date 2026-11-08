@@ -320,18 +320,9 @@
     /* theme */
     var saved = null;
     try { saved = localStorage.getItem("herb-theme"); } catch (e) {}
-    function applyTheme(pink) {
+        function applyTheme(pink) {
+      /* v37: leaf logo dono looks me aik hi rehta hai — no logo swap */
       document.body.classList.toggle("theme-pink", pink);
-      document.querySelectorAll("img").forEach(function (im) {
-        var s = im.getAttribute("src") || "";
-        if (pink) {
-          if (s.indexOf("logo-mark.png") > -1) { im.setAttribute("src", s.replace("logo-mark.png", "logo-mark-pink.png")); }
-          if (s.indexOf("logo-full.png") > -1) { im.setAttribute("src", s.replace("logo-full.png", "logo-full-pink.png")); }
-        } else {
-          if (s.indexOf("logo-mark-pink.png") > -1) { im.setAttribute("src", s.replace("logo-mark-pink.png", "logo-mark.png")); }
-          if (s.indexOf("logo-full-pink.png") > -1) { im.setAttribute("src", s.replace("logo-full-pink.png", "logo-full.png")); }
-        }
-      });
     }
     applyTheme(saved !== "classic"); /* his order 2026-11-08: Pink is the default look now */
     var tbtn = document.createElement("button");
