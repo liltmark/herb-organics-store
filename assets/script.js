@@ -292,3 +292,24 @@
     });
   }
 })();
+
+/* OT-look v29 (2026-11-08): announcement marquee + homepage trust strip + new logo mark */
+(function () {
+  try {
+    var items = "Cash on Delivery \u2014 All Pakistan \u2003|\u2003 Handcrafted in Pakistan \u2003|\u2003 Sulphate & Paraben Free \u2003|\u2003 50+ Natural Ingredients \u2003|\u2003 Family-Run Brand \u2003|\u2003 ";
+    var bar = document.createElement("div");
+    bar.className = "ot-bar";
+    bar.setAttribute("aria-hidden", "true");
+    bar.innerHTML = '<div class="ot-track"><span>' + items + '</span><span>' + items + '</span></div>';
+    document.body.insertBefore(bar, document.body.firstChild);
+    var lm = document.querySelector(".logo-mark");
+    if (lm) { lm.innerHTML = '<img src="/images/logo/logo-mark.png" alt="" width="48" height="48">'; }
+    var hdr = document.querySelector(".site-header");
+    if (hdr && document.querySelector(".hero")) {
+      var strip = document.createElement("div");
+      strip.className = "trust-strip";
+      strip.innerHTML = "<span>\uD83C\uDF3F Pure &amp; Natural Ingredients</span><span>\uD83C\uDFE0 Family-Run Pakistani Brand</span><span>\uD83D\uDCB5 Cash on Delivery</span><span>\uD83D\uDEAB No Harsh Chemicals</span><span>\uD83D\uDCE6 Delivered Across Pakistan</span>";
+      hdr.parentNode.insertBefore(strip, hdr.nextSibling);
+    }
+  } catch (e) {}
+})();
