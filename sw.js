@@ -94,3 +94,5 @@ self.addEventListener("fetch", function (event) {
     );
   }
 });
+
+/* v44 rebuild trigger — no functional change */
