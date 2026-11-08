@@ -672,3 +672,8 @@ body.theme-pink .p-fab { background: #e73370; border-color: #f78fb8; }
 body.theme-pink .p-drawer-head { background: #e73370; }
 body.theme-pink .p-item .p-price { color: #c2255c; }
 @media (max-width: 760px) { .theme-btn { padding: 6px 10px; font-size: .76rem; } .p-fab { left: 12px; bottom: 14px; padding: 11px 16px; font-size: .88rem; } }
+
+/* v37 — leaf logo (his order 2026-11-08): wordmark bold sans caps,
+   dark green in BOTH looks, bilkul reference wali tarah. */
+.logo-text strong { font-family: 'Segoe UI', Arial, Helvetica, sans-serif; text-transform: uppercase; letter-spacing: .05em; }
+body.theme-pink .logo-text strong { color: #14532d; }
