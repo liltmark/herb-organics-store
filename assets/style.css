@@ -713,3 +713,22 @@ body.theme-pink .logo-text strong { color: #14532d; }
    ============================================================ */
 html, body { overflow-x: hidden; overflow-x: clip; }
 .ot-bar { overflow: hidden; }
+
+/* ============================================================
+   v45 — MAROON look (2026-11-08 night, sahaib ka order):
+   pink khatam — ab gehra maroon + gold, jo products ke
+   amber/golden rangon se match karta hai. Sirf rang badle
+   hain, baqi poori setting waisi ki waisi hai. Logo bhi
+   phly wala (gold ring) wapas laga diya gaya hai.
+   ============================================================ */
+:root {
+  --pink: #7A1E2B;
+  --magenta: #5C1220;
+  --rose: #A63A4A;
+  --orange: #B97F26;
+  --yellow: #D9A83F;
+  --pink-soft: #FBF2EA;
+  --pink-tint: #F5E3D8;
+  --bg2: #FBF4EA;
+}
+.ot-bar { background: linear-gradient(90deg, #5C1220, #7A1E2B 55%, #5C1220); color: #F6E3C8; }
