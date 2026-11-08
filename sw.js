@@ -3,7 +3,7 @@
    offline navigation fallback to the homepage. */
 "use strict";
 
-var CACHE_NAME = "herb-organics-v32";
+var CACHE_NAME = "herb-organics-v33";
 
 var CORE_ASSETS = [
   "/",
@@ -19,9 +19,9 @@ var CORE_ASSETS = [
   "/icons/icon-192.png",
   "/icons/icon-512.png",
   "/icons/apple-touch-icon.png",
-  "/images/nabat-shampoo.jpg",
-  "/images/v2/beldi-soap-5.jpg",
-  "/images/v2/nabat-oil.jpg"
+  "/images/v3/shampoo-studio-1.webp",
+  "/images/v3/soap-studio-1.webp",
+  "/images/v3/oil-studio-1.webp"
 ];
 
 self.addEventListener("install", function (event) {
