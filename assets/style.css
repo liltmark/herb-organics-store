@@ -582,3 +582,61 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 800; letter-spacing
 .benefit { border-radius: 18px; }
 .site-footer { background: #14352a; }
 .faq-item, .order-box, .panel { border-radius: 16px; }
+
+/* ============================================================
+   v30 — PINK look (his order 2026-11-08, Organic Traveller type):
+   hot pink #ef4684 accents, light-pink sections, pink logo.
+   ============================================================ */
+:root {
+  --green-900: #333333; --green-800: #e73370; --green-700: #ef4684;
+  --green-100: #fce4ee; --green-50: #fdf2f7;
+  --gold: #ef4684; --gold-soft: #f78fb8;
+  --ink: #262626; --muted: #6f5a64; --line: #f3d9e4;
+  --shadow: 0 8px 26px rgba(239, 70, 132, .10);
+}
+h1, h2, h3, h4 { color: #262626; }
+.eyebrow { color: #e73370; }
+.ot-bar { background: #ef4684; color: #ffffff; }
+.trust-strip { background: #fdf2f7; color: #c2255c; border-bottom-color: var(--line); }
+.site-header { box-shadow: 0 2px 14px rgba(239,70,132,.06); }
+.logo-text strong { color: #b01753; }
+.logo-text span { color: #ef4684; }
+.main-nav a:not(.btn) { color: #333333; }
+.main-nav a:hover, .main-nav a[aria-current="page"] { color: #e73370; }
+.hero { background: linear-gradient(160deg, #fff7fa 0%, #ffedf4 60%, #fce4ee 100%); }
+.hero .tagline { color: #e73370; }
+.hero p { color: #6f5a64; }
+.badge { border-color: rgba(239,70,132,.45); color: #c2255c; background: rgba(255,255,255,.7); }
+.btn-order { background: #e73370; box-shadow: 0 6px 16px rgba(239,70,132,.28); }
+.btn-order:hover { background: #ef4684; }
+.btn-gold { background: #ef4684; }
+.card:hover { box-shadow: 0 12px 30px rgba(239,70,132,.16); }
+.p-for { background: #fce4ee; color: #c2255c; }
+.chip { background: #fdf2f7; border-color: var(--line); color: #8a4a63; }
+.card-body .btn-outline:hover { color: #e73370; }
+.concern { background: #fdf2f7; }
+.concern:hover { border-color: #f78fb8; box-shadow: 0 8px 26px rgba(239,70,132,.12); }
+.ing { border-color: #fce4ee; color: #c2255c; }
+.benefit .icon { background: #fce4ee; }
+.free-from span { border-color: #ef4684; color: #c2255c; }
+.check-list li::before { color: #e73370; }
+.steps li::before { background: #e73370; }
+.site-footer { background: #2a0e1a; }
+.site-footer a:hover { color: #f78fb8; }
+.chat-fab { background: #e73370; border-color: #f78fb8; }
+.chat-fab:hover { background: #ef4684; }
+.chat-head { background: linear-gradient(135deg, #2a0e1a, #e73370); }
+.chat-msg.user { background: #e73370; }
+.chat-chip { border-color: #ef4684; color: #b01753; }
+.chat-chip:hover { background: #ef4684; color: #fff; }
+.chat-send { background: #e73370; }
+.chat-send:hover { background: #ef4684; }
+.chat-order-btn { background: #ef4684; }
+.chat-order-btn:hover { background: #e73370; }
+.cta-box { border-left-color: #ef4684; }
+.time-chip { background: #ef4684; }
+.quote-card .mark { color: #ef4684; }
+.review-links a:hover { outline-color: #ef4684; }
+.g-thumb.is-active, .g-thumb:hover { border-color: #ef4684; }
+.field input:focus, .field select:focus, .field textarea:focus { outline-color: #ef4684; border-color: #ef4684; }
+.faq-item summary::after { color: #ef4684; }
