@@ -583,127 +583,20 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 800; letter-spacing
 .site-footer { background: #14352a; }
 .faq-item, .order-box, .panel { border-radius: 16px; }
 
-/* ============================================================
-   v30 — PINK look (his order 2026-11-08, Organic Traveller type):
-   hot pink #ef4684 accents, light-pink sections, pink logo.
-   ============================================================ */
-:root {
-  --green-900: #333333; --green-800: #e73370; --green-700: #ef4684;
-  --green-100: #fce4ee; --green-50: #fdf2f7;
-  --gold: #ef4684; --gold-soft: #f78fb8;
-  --ink: #262626; --muted: #6f5a64; --line: #f3d9e4;
-  --shadow: 0 8px 26px rgba(239, 70, 132, .10);
-}
-h1, h2, h3, h4 { color: #262626; }
-.eyebrow { color: #e73370; }
-.ot-bar { background: #ef4684; color: #ffffff; }
-.trust-strip { background: #fdf2f7; color: #c2255c; border-bottom-color: var(--line); }
-.site-header { box-shadow: 0 2px 14px rgba(239,70,132,.06); }
-.logo-text strong { color: #b01753; }
-.logo-text span { color: #ef4684; }
-.main-nav a:not(.btn) { color: #333333; }
-.main-nav a:hover, .main-nav a[aria-current="page"] { color: #e73370; }
-.hero { background: linear-gradient(160deg, #fff7fa 0%, #ffedf4 60%, #fce4ee 100%); }
-.hero .tagline { color: #e73370; }
-.hero p { color: #6f5a64; }
-.badge { border-color: rgba(239,70,132,.45); color: #c2255c; background: rgba(255,255,255,.7); }
-.btn-order { background: #e73370; box-shadow: 0 6px 16px rgba(239,70,132,.28); }
-.btn-order:hover { background: #ef4684; }
-.btn-gold { background: #ef4684; }
-.card:hover { box-shadow: 0 12px 30px rgba(239,70,132,.16); }
-.p-for { background: #fce4ee; color: #c2255c; }
-.chip { background: #fdf2f7; border-color: var(--line); color: #8a4a63; }
-.card-body .btn-outline:hover { color: #e73370; }
-.concern { background: #fdf2f7; }
-.concern:hover { border-color: #f78fb8; box-shadow: 0 8px 26px rgba(239,70,132,.12); }
-.ing { border-color: #fce4ee; color: #c2255c; }
-.benefit .icon { background: #fce4ee; }
-.free-from span { border-color: #ef4684; color: #c2255c; }
-.check-list li::before { color: #e73370; }
-.steps li::before { background: #e73370; }
-.site-footer { background: #2a0e1a; }
-.site-footer a:hover { color: #f78fb8; }
-.chat-fab { background: #e73370; border-color: #f78fb8; }
-.chat-fab:hover { background: #ef4684; }
-.chat-head { background: linear-gradient(135deg, #2a0e1a, #e73370); }
-.chat-msg.user { background: #e73370; }
-.chat-chip { border-color: #ef4684; color: #b01753; }
-.chat-chip:hover { background: #ef4684; color: #fff; }
-.chat-send { background: #e73370; }
-.chat-send:hover { background: #ef4684; }
-.chat-order-btn { background: #ef4684; }
-.chat-order-btn:hover { background: #e73370; }
-.cta-box { border-left-color: #ef4684; }
-.time-chip { background: #ef4684; }
-.quote-card .mark { color: #ef4684; }
-.review-links a:hover { outline-color: #ef4684; }
-.g-thumb.is-active, .g-thumb:hover { border-color: #ef4684; }
-.field input:focus, .field select:focus, .field textarea:focus { outline-color: #ef4684; border-color: #ef4684; }
-.faq-item summary::after { color: #ef4684; }
 
 /* ============================================================
-   v31 — Saas feedback round (2026-11-08 night):
-   rang zyada pur-kashish (rich pink gradients), naram lachakdaar
-   fonts (elegant serif headings), mobile par products 2 aik sath.
+   v32 — His order 2026-11-08 night: pink hata diya, pehle wala
+   (v29 green/gold) look wapas; sirf products aik line mein.
    ============================================================ */
-:root {
-  --font-head: Georgia, "Times New Roman", "Noto Serif", serif;
-  --pink-1: #ff5c8a; --pink-2: #ef4684; --pink-3: #d81b60;
-}
-body { line-height: 1.7; }
-h1, h2, h3, h4 { font-family: Georgia, "Times New Roman", serif; font-weight: 700; letter-spacing: 0; }
-h2.center::after {
-  content: ""; display: block; width: 74px; height: 4px; border-radius: 99px;
-  margin: 14px auto 0; background: linear-gradient(90deg, var(--pink-1), var(--pink-3));
-}
-.hero .tagline { font-family: Georgia, serif; font-style: italic; letter-spacing: .01em; }
-.logo-text strong { color: #b01753; }
-/* Rich gradient buttons + marquee */
-.btn-order { background: linear-gradient(135deg, var(--pink-1) 0%, var(--pink-2) 48%, var(--pink-3) 100%); box-shadow: 0 8px 20px rgba(216,27,96,.30); }
-.btn-order:hover { background: linear-gradient(135deg, var(--pink-2), var(--pink-3)); transform: translateY(-1px); }
-.btn-gold { background: linear-gradient(135deg, var(--pink-1), var(--pink-3)); }
-.ot-bar { background: linear-gradient(90deg, var(--pink-3), var(--pink-2), var(--pink-1), var(--pink-2), var(--pink-3)); }
-/* Warmer, richer hero */
-.hero { background:
-  radial-gradient(circle at 88% 6%, rgba(255,140,175,.40), transparent 46%),
-  radial-gradient(circle at 6% 92%, rgba(255,190,210,.35), transparent 42%),
-  linear-gradient(155deg, #fff6f9 0%, #ffe4ef 58%, #ffd6e6 100%); }
-.hero .visual--photo { box-shadow: 0 18px 40px rgba(216,27,96,.18); border: 6px solid #fff; }
-.badge { background: rgba(255,255,255,.82); border-color: rgba(216,27,96,.4); color: #b01753; }
-/* Cards + image frames: soft pink stage, richer shadow */
-.card { border-color: #f6c3d7; box-shadow: 0 6px 22px rgba(216,27,96,.10); }
-.card:hover { box-shadow: 0 16px 36px rgba(216,27,96,.20); }
-.card .visual--photo { background: radial-gradient(circle at 50% 32%, #ffffff 0%, #ffeef5 78%); padding: 10px; }
-.card .visual--photo img { border-radius: 14px; }
-.price { color: var(--pink-3); }
-.p-for { background: linear-gradient(90deg, #ffe0ec, #ffd0e2); color: #a3134b; }
-.section--alt { background: linear-gradient(180deg, #fff2f7, #ffe9f2); }
-.concern { background: #fff; border-color: #f6c3d7; }
-.concern .c-ico { width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(140deg, #ffe0ec, #ffc7da); }
-.ing { background: linear-gradient(180deg, #fff, #fff0f6); }
-.trust-strip { background: linear-gradient(90deg, #fff0f6, #ffe0ec, #fff0f6); }
-.benefit .icon { background: linear-gradient(140deg, #ffe0ec, #ffc7da); }
-.chat-fab { background: linear-gradient(135deg, var(--pink-1), var(--pink-3)); border-color: #ffc7da; }
-.chat-head { background: linear-gradient(135deg, #57102c, var(--pink-3)); }
-/* ---------- Mobile: products side-by-side, compact & lively ---------- */
 @media (max-width: 760px) {
-  #products .grid-3 { grid-template-columns: 1fr 1fr; gap: 14px; }
-  #products .card-body { padding: 13px 13px 15px; gap: 5px; }
-  #products .card-body h3 { font-size: .99rem; line-height: 1.3; }
-  #products .card-body p { font-size: .84rem; line-height: 1.5; }
+  #products .grid-3 { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  #products .card-body { padding: 10px 9px 12px; gap: 4px; }
+  #products .card-body h3 { font-size: .82rem; line-height: 1.25; }
+  #products .card-body p { display: none; }
+  #products .card-body .p-for { display: inline-block; font-size: .55rem; padding: 2px 7px; }
   #products .chip-row { display: none; }
-  #products .price { font-size: 1.06rem; }
-  #products .price small { display: block; font-size: .72rem; }
-  #products .btn { padding: 10px 10px; font-size: .86rem; }
-  #products .btn-outline { font-size: .84rem; }
-  .p-for { font-size: .62rem; padding: 3px 9px; }
-  .section--alt .grid-3 { grid-template-columns: 1fr 1fr; gap: 14px; }
-  .benefit { padding: 18px 15px; }
-  .benefit h3 { font-size: 1rem; }
-  .benefit p { font-size: .86rem; }
-  .concern-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
-  .concern { padding: 18px 14px; }
-  .hero { padding: 42px 0 48px; }
-  .trust-strip { gap: 10px 18px; font-size: .82rem; padding: 10px 12px; }
-  h2.center::after { margin-top: 10px; }
+  #products .price { font-size: .92rem; }
+  #products .price small { display: block; font-size: .64rem; }
+  #products .btn { padding: 8px 6px; font-size: .74rem; border-radius: 10px; }
+  #products .btn-outline { font-size: .72rem; }
 }
