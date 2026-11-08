@@ -600,3 +600,75 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 800; letter-spacing
   #products .btn { padding: 8px 6px; font-size: .74rem; border-radius: 10px; }
   #products .btn-outline { font-size: .72rem; }
 }
+
+/* ============================================================
+   v35 — (his orders 2026-11-08 night)
+   1) Top pati: screenshot wali bright green strip.
+   2) Products side drawer (sidebar) — har page par.
+   3) Do looks: Classic (green/gold) + Pink — switch button se,
+      choice visitor ke browser me yaad rehti hai (localStorage).
+   ============================================================ */
+.ot-bar { background: linear-gradient(90deg, #078a3e, #0aa64a 50%, #078a3e); color: #fff; font-size: .84rem; }
+/* --- theme toggle button (header, injected) --- */
+.theme-btn {
+  border: 2px solid var(--gold-soft); background: #fff; color: var(--green-800);
+  border-radius: 999px; padding: 7px 14px; font-weight: 800; font-size: .82rem;
+  cursor: pointer; font-family: inherit; white-space: nowrap;
+}
+.theme-btn:hover { background: var(--green-50); }
+/* --- products drawer --- */
+.p-fab {
+  position: fixed; left: 18px; bottom: 18px; z-index: 60;
+  background: var(--green-800); color: #fff; border: 2px solid var(--gold-soft);
+  border-radius: 999px; padding: 13px 20px; font-weight: 800; font-size: .95rem;
+  cursor: pointer; font-family: inherit; box-shadow: 0 8px 22px rgba(0,0,0,.28);
+}
+.p-fab:hover { background: var(--green-700); }
+.p-backdrop {
+  position: fixed; inset: 0; background: rgba(20,30,25,.45); z-index: 70;
+  opacity: 0; pointer-events: none; transition: opacity .25s ease;
+}
+.p-backdrop.open { opacity: 1; pointer-events: auto; }
+.p-drawer {
+  position: fixed; top: 0; right: 0; bottom: 0; z-index: 71;
+  width: min(348px, 90vw); background: #fff; box-shadow: -14px 0 38px rgba(0,0,0,.25);
+  transform: translateX(105%); transition: transform .28s ease;
+  display: flex; flex-direction: column;
+}
+.p-drawer.open { transform: translateX(0); }
+.p-drawer-head {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  padding: 16px 18px; background: var(--green-800); color: #fff;
+}
+.p-drawer-head strong { font-family: Georgia, serif; font-size: 1.06rem; }
+.p-drawer-close { background: none; border: none; color: #fff; font-size: 1.35rem; cursor: pointer; line-height: 1; padding: 4px 8px; }
+.p-drawer-body { padding: 16px; overflow-y: auto; display: flex; flex-direction: column; gap: 14px; }
+.p-item { display: flex; gap: 13px; border: 1px solid var(--line); border-radius: 14px; padding: 11px; align-items: center; }
+.p-item img { width: 66px; height: 66px; border-radius: 10px; object-fit: cover; flex: none; }
+.p-item h4 { font-size: .98rem; margin: 0 0 2px; }
+.p-item .p-price { font-weight: 800; color: var(--green-800); font-size: .94rem; margin: 0 0 6px; }
+.p-item .p-links { display: flex; gap: 12px; font-size: .86rem; font-weight: 700; }
+.p-drawer-foot { padding: 13px 16px; border-top: 1px solid var(--line); font-size: .86rem; color: var(--muted); text-align: center; }
+/* --- PINK theme (body.theme-pink) --- */
+body.theme-pink {
+  --green-900: #333333; --green-800: #e73370; --green-700: #ef4684;
+  --green-100: #fce4ee; --green-50: #fdf2f7;
+  --gold: #ef4684; --gold-soft: #f78fb8;
+  --ink: #262626; --muted: #6f5a64; --line: #f3d9e4;
+  --shadow: 0 8px 26px rgba(239, 70, 132, .12);
+}
+body.theme-pink .ot-bar { background: linear-gradient(90deg, #d81b60, #ef4684 50%, #d81b60); }
+body.theme-pink .hero { background: radial-gradient(circle at 88% 6%, rgba(255,140,175,.35), transparent 46%), linear-gradient(155deg, #fff6f9 0%, #ffe4ef 58%, #ffd6e6 100%); }
+body.theme-pink .site-footer { background: #2a0e1a; }
+body.theme-pink .logo-text strong { color: #b01753; }
+body.theme-pink .logo-text span { color: #ef4684; }
+body.theme-pink .theme-btn { border-color: #f78fb8; color: #c2255c; }
+body.theme-pink .chat-fab { background: #e73370; border-color: #f78fb8; }
+body.theme-pink .chat-head { background: linear-gradient(135deg, #2a0e1a, #e73370); }
+body.theme-pink .chat-msg.user { background: #e73370; }
+body.theme-pink .chat-send { background: #e73370; }
+body.theme-pink .btn-order { background: linear-gradient(135deg, #ff5c8a, #ef4684 48%, #d81b60); }
+body.theme-pink .p-fab { background: #e73370; border-color: #f78fb8; }
+body.theme-pink .p-drawer-head { background: #e73370; }
+body.theme-pink .p-item .p-price { color: #c2255c; }
+@media (max-width: 760px) { .theme-btn { padding: 6px 10px; font-size: .76rem; } .p-fab { left: 12px; bottom: 14px; padding: 11px 16px; font-size: .88rem; } }
