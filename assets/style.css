@@ -512,3 +512,73 @@ h1, h2, h3, h4 { letter-spacing: .01em; }
 .ig-fallback { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; min-height: 380px; padding: 24px; text-align: center; background: linear-gradient(160deg, var(--green-800), var(--green-900)); color: #f5eddf; text-decoration: none; font-family: Georgia, 'Times New Roman', serif; font-size: 1.05rem; border-radius: 12px; }
 .ig-fallback:hover { text-decoration: none; filter: brightness(1.12); }
 .ig-fallback .ig-play { width: 58px; height: 58px; border-radius: 50%; border: 2px solid var(--gold-soft); color: var(--gold-soft); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; padding-left: 4px; }
+
+/* ============================================================
+   v29 — "Organic Traveller" style clean beauty-store look
+   (saas's demand, 2026-11-08): bright white, modern sans,
+   deep herb green + gold, marquee bar, OT-style product cards.
+   ============================================================ */
+:root {
+  --green-900: #14352a; --green-800: #1e4633; --green-700: #2c5f47;
+  --green-100: #e9f1e7; --green-50: #f4f7f2;
+  --cream: #ffffff; --cream-2: #f7f5ef;
+  --gold: #a87b3f; --gold-soft: #cba35c;
+  --ink: #1c2420; --muted: #5f6f66; --line: #e6eae4;
+  --white: #ffffff; --radius: 18px;
+  --shadow: 0 8px 26px rgba(20, 53, 42, .08);
+  --font-head: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+body { background: #fff; }
+h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 800; letter-spacing: -.01em; color: #14352a; }
+.eyebrow { color: var(--green-700); }
+/* Announcement marquee (injected by script.js) */
+.ot-bar { background: #14352a; color: #f7f0e2; overflow: hidden; white-space: nowrap; font-size: .82rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.ot-track { display: inline-flex; width: max-content; animation: ot-slide 26s linear infinite; }
+.ot-track span { padding: 9px 0; }
+.ot-track span::after { content: ""; }
+@keyframes ot-slide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+/* Trust strip (homepage, injected by script.js) */
+.trust-strip { background: var(--green-50); border-bottom: 1px solid var(--line); display: flex; gap: 34px; justify-content: center; flex-wrap: wrap; padding: 12px 16px; font-weight: 700; font-size: .92rem; color: var(--green-800); }
+/* Header — clean white, new logo */
+.site-header { background: rgba(255,255,255,.97); border-bottom: 1px solid var(--line); box-shadow: 0 2px 14px rgba(20,53,42,.05); }
+.logo-mark { background: none; border: none; width: 48px; height: 48px; border-radius: 50%; overflow: hidden; }
+.logo-mark img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.logo-text strong { font-family: Georgia, "Times New Roman", serif; font-weight: 700; }
+.main-nav a:not(.btn) { font-weight: 700; }
+/* Hero — bright, airy */
+.hero { background: linear-gradient(160deg, #f7faf4 0%, #eef5ea 60%, #e9f1e7 100%); padding: 64px 0 70px; }
+.hero h1 { font-size: clamp(2.3rem, 5.4vw, 3.4rem); }
+.hero .tagline { color: var(--green-700); font-weight: 700; }
+.badge { border-color: rgba(30,70,51,.35); color: var(--green-800); background: rgba(255,255,255,.65); }
+.hero .visual--photo, .visual--photo { background: #fbfbf8; border-radius: 22px; }
+/* Buttons — pill, deep green */
+.btn { border-radius: 999px; }
+.btn-order { background: var(--green-800); box-shadow: 0 6px 16px rgba(20,53,42,.20); }
+.btn-order:hover { background: var(--green-700); }
+/* OT-style product cards */
+.card { border: 1px solid var(--line); border-radius: 20px; box-shadow: 0 4px 18px rgba(20,53,42,.06); }
+.card:hover { box-shadow: 0 12px 30px rgba(20,53,42,.12); }
+.card .visual--photo { aspect-ratio: 1/1; background: #fbfbf8; }
+.card-body { padding: 20px 22px 24px; gap: 7px; }
+.p-for { display: inline-block; align-self: flex-start; background: var(--green-100); color: var(--green-800); font-size: .76rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; padding: 4px 12px; border-radius: 999px; margin: 0; }
+.card-body h3 { font-size: 1.22rem; }
+.price { color: var(--ink); font-size: 1.35rem; }
+.card-body .btn-order { width: 100%; margin-top: 4px; }
+.card-body .btn-outline { border: none; padding: 6px 0 0; font-size: .94rem; text-decoration: underline; text-underline-offset: 3px; }
+.card-body .btn-outline:hover { background: none; color: var(--gold); }
+.chip { background: var(--green-50); border: 1px solid var(--line); color: var(--green-800); }
+/* Shop by Concern + Ingredients (homepage) */
+.concern-grid { display: grid; gap: 18px; margin-top: 34px; }
+@media (min-width: 760px) { .concern-grid { grid-template-columns: repeat(4, 1fr); } }
+.concern { background: var(--green-50); border: 1px solid var(--line); border-radius: 18px; padding: 24px 20px; text-decoration: none; display: block; }
+.concern:hover { border-color: var(--gold-soft); box-shadow: var(--shadow); }
+.concern .c-ico { font-size: 1.7rem; margin-bottom: 10px; }
+.concern h3 { font-size: 1.05rem; margin-bottom: .3em; }
+.concern p { color: var(--muted); font-size: .92rem; margin: 0; }
+.ing-row { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 28px; }
+.ing { background: #fff; border: 1.5px solid var(--green-100); color: var(--green-800); font-weight: 800; padding: 10px 22px; border-radius: 999px; font-size: .98rem; }
+/* Sections + footer */
+.section--alt { background: var(--green-50); }
+.benefit { border-radius: 18px; }
+.site-footer { background: #14352a; }
+.faq-item, .order-box, .panel { border-radius: 16px; }
