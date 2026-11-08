@@ -320,7 +320,7 @@
     /* v38: theme switch khatam — store sirf Pink hai */
     /* products drawer */
     var items = [
-      { img: "/images/v3/shampoo-studio-1.webp", name: "NABAT Herbal & Organic Shampoo", price: "Rs. 999 / 300 ml", link: "/products/nabat-shampoo" },
+      { img: "/images/v4/shampoo-liquid-1.webp", name: "NABAT Herbal & Organic Shampoo", price: "Rs. 999 / 300 ml", link: "/products/nabat-shampoo" },
       { img: "/images/v3/soap-studio-1.webp", name: "Nabat Herbal Soap", price: "Rs. 300 \u2013 Rs. 500", link: "/products/beldi-black-soap" },
       { img: "/images/v3/oil-studio-1.webp", name: "Nabat Hair Oil", price: "Rs. 700 \u2013 Rs. 1,000", link: "/products/nabat-oil" }
     ];
