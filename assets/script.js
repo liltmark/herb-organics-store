@@ -313,3 +313,51 @@
     }
   } catch (e) {}
 })();
+
+/* v35 (2026-11-08): do looks (Classic/Pink) switch + products side drawer */
+(function () {
+  try {
+    /* theme */
+    var saved = null;
+    try { saved = localStorage.getItem("herb-theme"); } catch (e) {}
+    if (saved === "pink") { document.body.classList.add("theme-pink"); }
+    var tbtn = document.createElement("button");
+    tbtn.type = "button"; tbtn.className = "theme-btn";
+    function tlabel() { tbtn.textContent = document.body.classList.contains("theme-pink") ? "\uD83C\uDF3F Classic Look" : "\uD83C\uDF38 Pink Look"; }
+    tlabel();
+    tbtn.addEventListener("click", function () {
+      var pink = document.body.classList.toggle("theme-pink");
+      try { localStorage.setItem("herb-theme", pink ? "pink" : "classic"); } catch (e) {}
+      tlabel();
+    });
+    var hin = document.querySelector(".header-in");
+    var navToggle = document.querySelector(".nav-toggle");
+    if (hin) { hin.insertBefore(tbtn, navToggle || null); }
+    /* products drawer */
+    var items = [
+      { img: "/images/v3/shampoo-studio-1.webp", name: "NABAT Herbal & Organic Shampoo", price: "Rs. 999 / 300 ml", link: "/products/nabat-shampoo" },
+      { img: "/images/v3/soap-studio-1.webp", name: "Nabat Herbal Soap", price: "Rs. 300 \u2013 Rs. 500", link: "/products/beldi-black-soap" },
+      { img: "/images/v3/oil-studio-1.webp", name: "Nabat Hair Oil", price: "Rs. 700 \u2013 Rs. 1,000", link: "/products/nabat-oil" }
+    ];
+    var fab = document.createElement("button");
+    fab.type = "button"; fab.className = "p-fab"; fab.textContent = "\uD83D\uDED2 Products";
+    var backdrop = document.createElement("div"); backdrop.className = "p-backdrop";
+    var drawer = document.createElement("aside"); drawer.className = "p-drawer";
+    drawer.setAttribute("aria-label", "Our products");
+    var html = '<div class="p-drawer-head"><strong>Our Products</strong><button type="button" class="p-drawer-close" aria-label="Close">\u00D7</button></div><div class="p-drawer-body">';
+    items.forEach(function (it) {
+      html += '<div class="p-item"><img src="' + it.img + '" alt="" loading="lazy"><div><h4>' + it.name + '</h4><p class="p-price">' + it.price + '</p><div class="p-links"><a href="' + it.link + '">View</a><a href="/#order">Order Now</a></div></div></div>';
+    });
+    html += '</div><div class="p-drawer-foot">Cash on Delivery \u2014 all Pakistan \u00B7 WhatsApp (info): +92 343 7124768</div>';
+    drawer.innerHTML = html;
+    document.body.appendChild(backdrop);
+    document.body.appendChild(drawer);
+    document.body.appendChild(fab);
+    function openD() { drawer.classList.add("open"); backdrop.classList.add("open"); }
+    function closeD() { drawer.classList.remove("open"); backdrop.classList.remove("open"); }
+    fab.addEventListener("click", openD);
+    backdrop.addEventListener("click", closeD);
+    drawer.querySelector(".p-drawer-close").addEventListener("click", closeD);
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") { closeD(); } });
+  } catch (e) {}
+})();
