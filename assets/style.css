@@ -640,3 +640,70 @@ h1, h2, h3, h4 { color: #262626; }
 .g-thumb.is-active, .g-thumb:hover { border-color: #ef4684; }
 .field input:focus, .field select:focus, .field textarea:focus { outline-color: #ef4684; border-color: #ef4684; }
 .faq-item summary::after { color: #ef4684; }
+
+/* ============================================================
+   v31 — Saas feedback round (2026-11-08 night):
+   rang zyada pur-kashish (rich pink gradients), naram lachakdaar
+   fonts (elegant serif headings), mobile par products 2 aik sath.
+   ============================================================ */
+:root {
+  --font-head: Georgia, "Times New Roman", "Noto Serif", serif;
+  --pink-1: #ff5c8a; --pink-2: #ef4684; --pink-3: #d81b60;
+}
+body { line-height: 1.7; }
+h1, h2, h3, h4 { font-family: Georgia, "Times New Roman", serif; font-weight: 700; letter-spacing: 0; }
+h2.center::after {
+  content: ""; display: block; width: 74px; height: 4px; border-radius: 99px;
+  margin: 14px auto 0; background: linear-gradient(90deg, var(--pink-1), var(--pink-3));
+}
+.hero .tagline { font-family: Georgia, serif; font-style: italic; letter-spacing: .01em; }
+.logo-text strong { color: #b01753; }
+/* Rich gradient buttons + marquee */
+.btn-order { background: linear-gradient(135deg, var(--pink-1) 0%, var(--pink-2) 48%, var(--pink-3) 100%); box-shadow: 0 8px 20px rgba(216,27,96,.30); }
+.btn-order:hover { background: linear-gradient(135deg, var(--pink-2), var(--pink-3)); transform: translateY(-1px); }
+.btn-gold { background: linear-gradient(135deg, var(--pink-1), var(--pink-3)); }
+.ot-bar { background: linear-gradient(90deg, var(--pink-3), var(--pink-2), var(--pink-1), var(--pink-2), var(--pink-3)); }
+/* Warmer, richer hero */
+.hero { background:
+  radial-gradient(circle at 88% 6%, rgba(255,140,175,.40), transparent 46%),
+  radial-gradient(circle at 6% 92%, rgba(255,190,210,.35), transparent 42%),
+  linear-gradient(155deg, #fff6f9 0%, #ffe4ef 58%, #ffd6e6 100%); }
+.hero .visual--photo { box-shadow: 0 18px 40px rgba(216,27,96,.18); border: 6px solid #fff; }
+.badge { background: rgba(255,255,255,.82); border-color: rgba(216,27,96,.4); color: #b01753; }
+/* Cards + image frames: soft pink stage, richer shadow */
+.card { border-color: #f6c3d7; box-shadow: 0 6px 22px rgba(216,27,96,.10); }
+.card:hover { box-shadow: 0 16px 36px rgba(216,27,96,.20); }
+.card .visual--photo { background: radial-gradient(circle at 50% 32%, #ffffff 0%, #ffeef5 78%); padding: 10px; }
+.card .visual--photo img { border-radius: 14px; }
+.price { color: var(--pink-3); }
+.p-for { background: linear-gradient(90deg, #ffe0ec, #ffd0e2); color: #a3134b; }
+.section--alt { background: linear-gradient(180deg, #fff2f7, #ffe9f2); }
+.concern { background: #fff; border-color: #f6c3d7; }
+.concern .c-ico { width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(140deg, #ffe0ec, #ffc7da); }
+.ing { background: linear-gradient(180deg, #fff, #fff0f6); }
+.trust-strip { background: linear-gradient(90deg, #fff0f6, #ffe0ec, #fff0f6); }
+.benefit .icon { background: linear-gradient(140deg, #ffe0ec, #ffc7da); }
+.chat-fab { background: linear-gradient(135deg, var(--pink-1), var(--pink-3)); border-color: #ffc7da; }
+.chat-head { background: linear-gradient(135deg, #57102c, var(--pink-3)); }
+/* ---------- Mobile: products side-by-side, compact & lively ---------- */
+@media (max-width: 760px) {
+  #products .grid-3 { grid-template-columns: 1fr 1fr; gap: 14px; }
+  #products .card-body { padding: 13px 13px 15px; gap: 5px; }
+  #products .card-body h3 { font-size: .99rem; line-height: 1.3; }
+  #products .card-body p { font-size: .84rem; line-height: 1.5; }
+  #products .chip-row { display: none; }
+  #products .price { font-size: 1.06rem; }
+  #products .price small { display: block; font-size: .72rem; }
+  #products .btn { padding: 10px 10px; font-size: .86rem; }
+  #products .btn-outline { font-size: .84rem; }
+  .p-for { font-size: .62rem; padding: 3px 9px; }
+  .section--alt .grid-3 { grid-template-columns: 1fr 1fr; gap: 14px; }
+  .benefit { padding: 18px 15px; }
+  .benefit h3 { font-size: 1rem; }
+  .benefit p { font-size: .86rem; }
+  .concern-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .concern { padding: 18px 14px; }
+  .hero { padding: 42px 0 48px; }
+  .trust-strip { gap: 10px 18px; font-size: .82rem; padding: 10px 12px; }
+  h2.center::after { margin-top: 10px; }
+}
